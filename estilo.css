@@ -1,0 +1,20 @@
+body {
+    /* Define a imagem de fundo */
+    background-image: url('https://th.bing.com/th?id=OIP.1v3IP2UeHBRgYlzSXaYc0AHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&cb=13&dpr=1.3&pid=3.1&rm=2');
+    
+    /* Faz com que a imagem cubra toda a tela */
+    background-size: cover;
+    
+    /* Faz com que a imagem fique fixa ao fundo quando rolar */
+    background-attachment: fixed;
+    
+    /* Garante que a imagem esteja centralizada */
+    background-position: center;
+    
+    /* Garante que o fundo ocupe toda a tela */
+    background-repeat: no-repeat;
+    
+    /* Define a altura mínima do body para 100% da altura da tela */
+    min-height: 100vh;
+    margin: 0;
+}
