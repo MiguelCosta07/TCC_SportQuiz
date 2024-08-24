@@ -1,7 +1,6 @@
-/* Define o fundo com um gradiente azul suave que muda de tom */
+
 body {
     background: linear-gradient(180deg, #004080, #0099ff);
-    /* Ajusta a altura do fundo para cobrir toda a página */
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -42,10 +41,10 @@ form {
 .sport {
     margin-top: 20px;
     margin-right: 20px;
-    width: 150px; /* Largura do quadrado */
-    height: 150px; /* Altura do quadrado */
-    object-fit: cover; /* Faz o ajuste e corte */
-    border-radius: 8px; /* Bordas arredondadas (opcional) */
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover;
+    border-radius: 8px; 
 }
 .name {
     text-align: center;
@@ -55,7 +54,7 @@ form {
     margin: 10px;
     text-align: center;
     cursor: pointer;
-    float: left;
+
 }
 .opcao:hover {
     background-color: rgb(74, 74, 255);
@@ -73,3 +72,9 @@ form {
     background-color: blue;
    transition: all 50ms; 
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+

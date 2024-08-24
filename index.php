@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="estilo.css"> <!-- Link para o arquivo CSS -->
     <title>SportQuiz</title>
     <img class="logo" alt="imagemquiz" src="/imagem/testequiz.jpg">
-    <h1>SportQuiz</h1>
-    <h3 class="cadas">Cadastrar</h3>
-    <h3 class="login">Login</h3>
+    <h1><a href="index.php">SportQuiz</a></h1> 
+    <h3 class="cadas"><a href="cadastro.php">Cadastrar</a></h3>
+    <h3 class="login"><a href="login.php">Logar</a></h3>
 </head>
 <body>
 <form method="post">
