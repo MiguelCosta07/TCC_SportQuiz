@@ -16,12 +16,12 @@
         </div>
     </nav>
     <div class="login">
-        <form>
+        <form class="logcas">
             <h1>Sig in</h1>
             <label for="usuario">Usuário</label>
-            <input type="text" id="usuario">
+            <input class="escrever" type="text" id="usuario">
             <label for="senha">Senha</label>
-            <input type="password" id="senha">
+            <input class="escrever" type="password" id="senha">
             <button class="lcbtn" type="submit">Cadastrar</button>
         </form>
     </div>   
