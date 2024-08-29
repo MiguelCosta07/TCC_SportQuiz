@@ -7,8 +7,6 @@
     <title>SportQuiz</title>
 </head>
 <body>
-    <h2 class="escolha">Selecione seu esporte favorito:</h2>
-    <br>
     <nav class="navbar">
         <img class="logo" alt="imagemquiz" src="/imagem/testequiz.jpg">
         <h1><a href="index.php">SportQuiz</a></h1>
@@ -17,6 +15,11 @@
             <h3><a href="login.php">Logar</a></h3>
         </div>
     </nav>
+
+    <div class="escolha-container">
+        <h2 class="escolha">Selecione seu esporte favorito:</h2>
+    </div>
+
     <div class="esporte-container">
         <form method="post">
             <div class="opcao">

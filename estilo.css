@@ -4,12 +4,11 @@ body {
     margin: 0px;
     font-family: Arial, sans-serif;
     display: flex;
+
 }
-.escolha {
+.escolha-container {
     text-shadow: 0px 0px 10px white;
     padding-top: 100px;
-    float: left;
-    text-align: center;
 }
 
 .navbar {
