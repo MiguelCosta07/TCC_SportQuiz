@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <title>SportQuiz</title>
-</head>
-<body>
     <nav class="navbar">
         <img class="logo" alt="imagemquiz" src="/imagem/testequiz.jpg">
         <h1><a href="index.php">SportQuiz</a></h1>
@@ -15,11 +13,9 @@
             <h3><a href="login.php">Logar</a></h3>
         </div>
     </nav>
-
-    <div class="escolha-container">
-        <h2 class="escolha">Selecione seu esporte favorito:</h2>
-    </div>
-
+</head>
+<body>
+        <h2 class="escolha">Selecione seu esporte favorito:</h2><br>
     <div class="esporte-container">
         <form method="post">
             <div class="opcao">
@@ -31,11 +27,11 @@
                 </label>
             </div>
             <div class="opcao">
-                <label for="vôlei">
-                    <div class="nome">Vôlei</div>
-                    <img class="esporte" src="/imagem/vol.jpg" alt="vôlei">
+                <label for="Tênis">
+                    <div class="nome">Tênis</div>
+                    <img class="esporte" src="/imagem/tenis.jpg" alt="Tênis">
                     <br>
-                    <input type="checkbox" id="vôlei" name="cores[]" value="vôlei">
+                    <input type="checkbox" id="Tênis" name="cores[]" value="Tênis">
                 </label>
             </div>
             <div class="opcao">
@@ -46,6 +42,7 @@
                     <input type="checkbox" id="Basquete" name="cores[]" value="Basquete">
                 </label>
             </div>
+            <br></br>
             <div class="opcao">
                 
                 <label for="PingPong">
@@ -55,9 +52,21 @@
                     <input type="checkbox" id="PingPong" name="cores[]" value="Basquete">
                 </label>
             </div>
+            <div class="opcao">
+                
+                <label for="Surfe">
+                    <div class="nome">Surfe</div>
+                    <img class="esporte" src="/imagem/surf.jpg" alt="surf">
+                    <br>
+                    <input type="checkbox" id="surf" name="cores[]" value="surf">
+                </label>
+            </div>
             <br>
             <button class="confirmar" type="submit" name="enviar"><a href="login.php">Enviar</a></button>
         </form>
     </div>
 </body>
+<footer>
+
+</footer>
 </html>

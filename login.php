@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <title>SportQuiz</title>
-</head>
-<body>
     <nav class="navbar">
         <img class="logo" alt="imagemquiz" src="/imagem/testequiz.jpg">
         <h1><a href="index.php">SportQuiz</a></h1>
@@ -15,6 +13,8 @@
             <h3><a href="login.php">Logar</a></h3>
         </div>
     </nav>
+</head>
+<body>
     <div class="login">
         <form class="logcas">
             <h1>Log in</h1>
