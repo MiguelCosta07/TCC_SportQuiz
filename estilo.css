@@ -45,7 +45,7 @@ body {
     padding: 6px;
     border-radius: 20px;
     margin-right: 1086px;
-    background-color: rgba(128, 128, 128, 0.13);
+    background-color: rgba(62, 62, 62, 0.13);
     text-align: left;
     text-shadow: 2px  2px 2px rgb(10, 99, 181);
     color: black;
@@ -97,13 +97,14 @@ transition: all 1s;
 
 .esporte {
     margin-top: 10px;
+    margin-bottom: -10px;
     margin-left: 10px;
     margin-right: 10px;
     width: 150px; 
     height: 150px; 
     object-fit: cover;
     border-radius: 15px;
-    transition: all 1s;
+    transition: all 1s; 
 }
 
 .esporte:hover {
@@ -121,7 +122,7 @@ transition: all 1s;
 .opcao {
     border-radius: 12px;
     display: inline-block;
-    margin: 10px;
+    margin: 4px;
     text-align: center;
     cursor: pointer;
     transition: all 1s;
@@ -130,20 +131,6 @@ transition: all 1s;
 .opcao:hover {
     background-color: rgb(0, 145, 255);
     transition: all 1s;
-}
-
-.confirmar {
-    padding: 8px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px black;
-    color: white;
-    background-color: rgb(0, 0, 86);
-}
-
-.confirmar:hover {
-    font-size: 16px;
-    background-color: blue;
-    transition: all 1s; 
 }
 
 a {
@@ -224,10 +211,12 @@ head {
     
 }
 
-.check:hover{
-    box-shadow: 1px 1px 5px darkblue;
-    transition: all 1s;
+.check {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
+
 .pgCadas {
     font-size: 14px;
 }

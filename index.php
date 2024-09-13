@@ -49,20 +49,19 @@
                     <div class="nome">Tênis de mesa</div>
                     <img class="esporte" src="/imagem/ping.jpg" alt="PingPong">
                     <br>
-                    <input class="check" type="checkbox" id="PingPong" name="cores[]" value="Basquete">
+                    <input class="check" type="checkbox" id="PingPong" name="cores[]" value="PingPong">
                 </label>
             </div>
             <div class="opcao">
-                
+ 
                 <label for="Surfe">
                     <div class="nome">Surfe</div>
-                    <img class="esporte" src="/imagem/surf.jpg" alt="surf">
+                    <img class="esporte" src="/imagem/surf.jpg" alt="Surfe">
                     <br>
-                    <input class="check" type="checkbox" id="surf" name="cores[]" value="surf">
+                    <input class="check" type="checkbox" id="Surfe" name="cores[]" value="Surfe">
                 </label>
             </div>
             <br>
-            <button class="confirmar" type="submit" name="enviar"><a href="login.php">Enviar</a></button>
         </form>
     </div>
 </body>
