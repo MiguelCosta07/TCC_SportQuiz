@@ -228,3 +228,10 @@ head {
     box-shadow: 1px 1px 5px darkblue;
     transition: all 1s;
 }
+.pgCadas {
+    font-size: 14px;
+}
+.pgCadas a {
+    color: aquamarine;
+    text-decoration: underline;
+}

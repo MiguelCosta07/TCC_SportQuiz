@@ -23,6 +23,7 @@
             <label for="senha">Senha</label>
             <input class="escrever" type="password" id="senha">
             <button class="lcbtn" type="submit">Logar</button>
+            <p class="pgCadas">Não possui uma conta? <a href="cadastro.php">Cadastre-se aqui!</a></p>
         </form>
     </div>   
 </body>
