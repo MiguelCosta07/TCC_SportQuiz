@@ -15,7 +15,7 @@
     </nav>
 </head>
 <body>
-        <h2 class="escolha">Selecione seu esporte favorito:</h2><br>
+    <h2 class="escolha">Selecione seu esporte favorito:</h2>
     <div class="esporte-container">
         <form method="post">
             <div class="opcao">
@@ -23,7 +23,7 @@
                 <div class="nome">Futebol</div>
                 <img class="esporte" src="/imagem/fut.jpg" alt="futebol">
                 <br>
-                <input type="checkbox" id="futebol" name="cores[]" value="futebol">
+                <input class="check" type="checkbox" id="futebol" name="cores[]" value="futebol">
                 </label>
             </div>
             <div class="opcao">
@@ -31,7 +31,7 @@
                     <div class="nome">Tênis</div>
                     <img class="esporte" src="/imagem/tenis.jpg" alt="Tênis">
                     <br>
-                    <input type="checkbox" id="Tênis" name="cores[]" value="Tênis">
+                    <input class="check" type="checkbox" id="Tênis" name="cores[]" value="Tênis">
                 </label>
             </div>
             <div class="opcao">
@@ -39,7 +39,7 @@
                     <div class="nome">Basquete</div>
                     <img class="esporte" src="/imagem/basquete.jpg" alt="Basquete">
                     <br>
-                    <input type="checkbox" id="Basquete" name="cores[]" value="Basquete">
+                    <input class="check" type="checkbox" id="Basquete" name="cores[]" value="Basquete">
                 </label>
             </div>
             <br></br>
@@ -49,7 +49,7 @@
                     <div class="nome">Tênis de mesa</div>
                     <img class="esporte" src="/imagem/ping.jpg" alt="PingPong">
                     <br>
-                    <input type="checkbox" id="PingPong" name="cores[]" value="Basquete">
+                    <input class="check" type="checkbox" id="PingPong" name="cores[]" value="Basquete">
                 </label>
             </div>
             <div class="opcao">
@@ -58,7 +58,7 @@
                     <div class="nome">Surfe</div>
                     <img class="esporte" src="/imagem/surf.jpg" alt="surf">
                     <br>
-                    <input type="checkbox" id="surf" name="cores[]" value="surf">
+                    <input class="check" type="checkbox" id="surf" name="cores[]" value="surf">
                 </label>
             </div>
             <br>
