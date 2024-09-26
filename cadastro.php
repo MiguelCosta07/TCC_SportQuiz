@@ -8,21 +8,17 @@
     <nav class="navbar">
         <img class="logo" alt="imagemquiz" src="/imagem/testequiz.jpg">
         <h1><a href="index.php">SportQuiz</a></h1>
-        <div class="nav-links">
-            <h3 class="cadas"><a href="cadastro.php">Cadastrar</a></h3>
-            <h3><a href="login.php">Logar</a></h3>
-        </div>
     </nav>
 </head>
 <body>
     <div class="login">
         <form class="logcas">
-            <h1>Sig in</h1>
+            <h1>Cadastro</h1>
             <label for="usuario">Usuário</label>
             <input class="escrever" type="text" id="usuario">
             <label for="senha">Senha</label>
             <input class="escrever" type="password" id="senha">
-            <button class="lcbtn" type="submit">Cadastrar</button>
+            <button class="lcbtn" type="submit"><a href="principal.php">Cadastrar</a></button>
         </form>
     </div>   
 </body>
