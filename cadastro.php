@@ -16,6 +16,8 @@
             <h1>Cadastro</h1>
             <label for="usuario">Usuário</label>
             <input class="escrever" type="text" id="usuario">
+            <label for="usuario">E-mail</label>
+            <input class="escrever" type="email" id="email">
             <label for="senha">Senha</label>
             <input class="escrever" type="password" id="senha">
             <button class="lcbtn" type="submit"><a href="principal.php">Cadastrar</a></button>
