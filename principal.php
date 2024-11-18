@@ -1,3 +1,9 @@
+<?php
+     if(!isset($_SESSION)) {
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,7 +12,7 @@
     <link rel="stylesheet" href="estilo.css">
     <title>SportQuiz</title>
     <nav class="navbar">
-        <img class="logo" alt="imagemquiz" src="/imagem/testequiz.jpg">
+        <img class="logo" alt="imagemquiz" src="./imagem/testequiz.jpg">
         <h1><a href="index.php">SportQuiz</a></h1>
     </nav>
 </head>
@@ -16,34 +22,41 @@
         <form method="post">
             <div class="opcao">
                 <label for="futebol">
+            <a href="futebol.php">
                 <div class="nome">Futebol</div>
-                <img class="esporte" src="/imagem/fut.jpg" alt="futebol">
+                <img class="esporte" src="./imagem/fut.jpg" alt="futebol">
+            </a>
                 <br>
                 <input class="check" type="checkbox" id="futebol" name="cores[]" value="futebol">
                 </label>
             </div>
             <div class="opcao">
                 <label for="Tênis">
+            <a href="futebol.php">
                     <div class="nome">Tênis</div>
-                    <img class="esporte" src="/imagem/tenis.jpg" alt="Tênis">
+                    <img class="esporte" src="./imagem/tenis.jpg" alt="Tênis">
+            </a>
                     <br>
                     <input class="check" type="checkbox" id="Tênis" name="cores[]" value="Tênis">
                 </label>
             </div>
             <div class="opcao">
                 <label for="Basquete">
+            <a href="futebol.php">
                     <div class="nome">Basquete</div>
-                    <img class="esporte" src="/imagem/basquete.jpg" alt="Basquete">
+                    <img class="esporte" src="./imagem/basquete.jpg" alt="Basquete">
+            </a>
                     <br>
                     <input class="check" type="checkbox" id="Basquete" name="cores[]" value="Basquete">
                 </label>
             </div>
             <br></br>
             <div class="opcao">
-                
                 <label for="PingPong">
+            <a href="futebol.php">
                     <div class="nome">Tênis de mesa</div>
-                    <img class="esporte" src="/imagem/ping.jpg" alt="PingPong">
+                    <img class="esporte" src="./imagem/ping.jpg" alt="PingPong">
+            </a>
                     <br>
                     <input class="check" type="checkbox" id="PingPong" name="cores[]" value="PingPong">
                 </label>
@@ -51,8 +64,10 @@
             <div class="opcao">
  
                 <label for="Surfe">
+            <a href="futebol.php">
                     <div class="nome">Surfe</div>
-                    <img class="esporte" src="/imagem/surf.jpg" alt="Surfe">
+                    <img class="esporte" src="./imagem/surf.jpg" alt="Surfe">
+            </a>
                     <br>
                     <input class="check" type="checkbox" id="Surfe" name="cores[]" value="Surfe">
                 </label>
