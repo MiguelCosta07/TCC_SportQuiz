@@ -16,7 +16,7 @@
         <h1><a href="index.php">SportQuiz</a></h1>
     </nav>
 </head>
-<body>
+<body class="bodyprincipal">
     <h2 class="escolha">Selecione seu esporte favorito:</h2>
     <div class="esporte-container">
         <form method="post">
@@ -77,6 +77,22 @@
     </div>
 </body>
 <footer>
-
+<div class="footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nós</h3>
+                <p>Somos uma empresa dedicada a criar experiências únicas e emocionantes para os amantes de esportes ao redor do mundo. Estimulando seu conhecimento e aprendizagem!</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Empresa de Jogos. Todos os direitos reservados.
+        </div>
 </footer>
 </html>

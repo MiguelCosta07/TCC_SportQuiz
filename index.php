@@ -49,7 +49,7 @@
         <h1><a href="index.php">SportQuiz</a></h1>
     </nav>
 </head>
-<body>
+<body class="bodyprincipal">
     <div class="login">
         <form class="logcas" action="" method="POST">
             <h1>Acesso</h1>

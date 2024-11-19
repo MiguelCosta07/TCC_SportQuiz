@@ -1,9 +1,20 @@
-body {
+.bodyprincipal {
     background: linear-gradient(180deg, #004080, #0099ff);
     height: 100vh;
     font-family: Arial;
     display: inline;
+    padding: 0;
+    margin: 0;
 }
+
+.bodysport{
+    background: linear-gradient(180deg, #004080, #0099ff);
+    height: 100vh;
+    font-family: Arial;
+    padding: 0;
+    margin: 0;
+}
+
 .escolha{
     text-align: center;
     border-radius: 10px;
@@ -20,7 +31,6 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    position: absolute;
 }
 
 .navbar .logo {
@@ -107,8 +117,6 @@ transition: all 1s;
 }
 
 .esporte:hover {
-    width: 170px; 
-    height: 170px; 
     transition: all 1s;
 }
 
@@ -222,4 +230,38 @@ head {
 .pgCadas a {
     color: aquamarine;
     text-decoration: underline;
+}
+
+
+footer {
+    background-color: #003c3f;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.footer-section {
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+.social-links a {
+    margin-right: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: #f39c12;
+}
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
 }
