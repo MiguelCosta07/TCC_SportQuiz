@@ -22,7 +22,7 @@
         <form method="post">
             <div class="opcao">
                 <label for="futebol">
-            <a href="futebol.php">
+            <a href="fut.php">
                 <div class="nome">Futebol</div>
                 <img class="esporte" src="./imagem/fut.jpg" alt="futebol">
             </a>
@@ -32,7 +32,7 @@
             </div>
             <div class="opcao">
                 <label for="Tênis">
-            <a href="futebol.php">
+            <a href="tenis.php">
                     <div class="nome">Tênis</div>
                     <img class="esporte" src="./imagem/tenis.jpg" alt="Tênis">
             </a>
@@ -42,7 +42,7 @@
             </div>
             <div class="opcao">
                 <label for="Basquete">
-            <a href="futebol.php">
+            <a href="basquete.php">
                     <div class="nome">Basquete</div>
                     <img class="esporte" src="./imagem/basquete.jpg" alt="Basquete">
             </a>
@@ -53,7 +53,7 @@
             <br></br>
             <div class="opcao">
                 <label for="PingPong">
-            <a href="futebol.php">
+            <a href="ping.php">
                     <div class="nome">Tênis de mesa</div>
                     <img class="esporte" src="./imagem/ping.jpg" alt="PingPong">
             </a>
@@ -64,7 +64,7 @@
             <div class="opcao">
  
                 <label for="Surfe">
-            <a href="futebol.php">
+            <a href="surf.php">
                     <div class="nome">Surfe</div>
                     <img class="esporte" src="./imagem/surf.jpg" alt="Surfe">
             </a>

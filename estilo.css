@@ -234,7 +234,7 @@ head {
 
 
 footer {
-    background-color: #003c3f;
+    background-color: #094d50;
     padding: 20px 40px;
     display: flex;
     flex-direction: column;
@@ -265,3 +265,73 @@ footer {
     text-align: center;
     font-size: 14px;
 }
+
+.ranking-container {
+    width: 20%;
+    margin: 50px 0 0 30px;
+    background-color: #bab4b4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 300px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.ranking-container h1 {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    white-space: nowrap;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+
+.ranking-table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.ranking-table thead {
+    background-color: #00bcd4; 
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.ranking-table thead th {
+    padding: 10px;
+    text-align: center;
+}
+
+.ranking-table tbody tr:hover {
+    background-color: #80deea;
+    cursor: pointer;
+}
+
+.ranking-table td, .ranking-table th {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.ranking-table tbody td {
+    font-family: 'Verdana', sans-serif;
+    color: #555;
+}
+
+.ranking-table tbody tr {
+    background-color: #ceedf1;
+    font-weight: bold;
+}
+
+
