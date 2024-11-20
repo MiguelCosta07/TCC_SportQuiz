@@ -9,7 +9,7 @@
 
 .bodysport{
     background: linear-gradient(180deg, #004080, #0099ff);
-    height: 100vh;
+    height: auto;
     font-family: Arial;
     padding: 0;
     margin: 0;
@@ -333,5 +333,76 @@ footer {
     background-color: #ceedf1;
     font-weight: bold;
 }
+.textofut {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textofut h3 {
+    color: #33e11f; 
+    font-size: 22px;
+    text-align: center;
+}
+
+.textofut p {
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff; 
+    max-width: 90%; 
+    margin: 0 auto; 
+    line-height: 1.6; 
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container .iniciar-quiz {
+    background-color: #00bcd4;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container .iniciar-quiz:hover {
+    background-color: #0097a7;
+}
+
+
 
 
