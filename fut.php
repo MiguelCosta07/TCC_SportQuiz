@@ -66,9 +66,9 @@ $usuariosOrdenados = $usuarios;
         </div>
 
         <div class="form-container">
-            <h2>Escolha a Dificuldade</h2>
-            <form action="quiz.php" method="post">
-                <label for="dificuldade">Dificuldade:</label>
+            <h2>Para começar um Quiz com perguntas aleatórias, primeiro escolha a dificuldade das questões.</h2>
+            <form action="quizfut.php" method="post">
+                <label for="dificuldade">Lembrando que quanto maior a dificuldade, mais pontos:</label>
                 <select name="dificuldade" id="dificuldade">
                     <option value="facil">Fácil</option>
                     <option value="medio">Médio</option>
