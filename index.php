@@ -25,7 +25,7 @@
                     session_start();
                 }
 
-                $_SESSION['idusuario'] = $usuario['idusuario'];
+                $_SESSION['id'] = $usuario['id'];  
                 $_SESSION['email'] = $usuario['email'];
 
                 header("Location: principal.php");
@@ -37,6 +37,7 @@
         }
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

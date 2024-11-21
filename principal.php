@@ -1,7 +1,17 @@
 <?php
-     if(!isset($_SESSION)) {
+    if(!isset($_SESSION)) {
         session_start();
     }
+
+    include('conexao_bd.php');
+    $id = $_SESSION['id'];  
+    $sql_code = "SELECT * FROM usuarios WHERE id = '$id'"; 
+    $sql_query = $mysqli->query($sql_code);
+    $usuario = $sql_query->fetch_assoc();
+
+    $pontuacao = $usuario['pontuacao']; 
+    $nome = $usuario['nome']; 
+    $imagem_perfil = isset($usuario['imagem_perfil']) && !empty($usuario['imagem_perfil']) ? $usuario['imagem_perfil'] : 'imagem/anonimo.png';
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +24,16 @@
     <nav class="navbar">
         <img class="logo" alt="imagemquiz" src="./imagem/testequiz.jpg">
         <h1><a href="index.php">SportQuiz</a></h1>
+        <div class="perfil">
+            <button class="perfil-btn" onclick="toggleMenu()">
+                <img class="perfil-icone" src="<?php echo $imagem_perfil; ?>" alt="Perfil">
+            </button>
+            <div id="menuPerfil" class="dropdown-content">
+                <a href="perfil.php">Minhas Informações</a>
+                <a href="perfil.php">Alterar Credenciais</a>
+                <a href="logout.php">Sair</a>
+            </div>
+        </div>
     </nav>
 </head>
 <body class="bodyprincipal">
@@ -62,7 +82,6 @@
                 </label>
             </div>
             <div class="opcao">
- 
                 <label for="Surfe">
             <a href="surf.php">
                     <div class="nome">Surfe</div>
@@ -95,4 +114,10 @@
             &copy; 2024 Empresa de Jogos. Todos os direitos reservados.
         </div>
 </footer>
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('menuPerfil');
+        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
 </html>
