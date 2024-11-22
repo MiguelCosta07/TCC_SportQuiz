@@ -70,7 +70,28 @@ $usuario = $sql_query->fetch_assoc();
 
         <a href="principal.php" ><button type="submit" class="pag-perfil-btn">Voltar</button></a>
 
-        
     </div>
+    <div class="tableinfuser">
+    <h2 class="tableinfuser-title">Informações do Meu Perfil</h2>
+    <table class="tableinfuser-table">
+        <tr>
+            <th class="tableinfuser-header">Campo</th>
+            <th class="tableinfuser-header">Atual</th>
+        </tr>
+        <tr>
+            <td class="tableinfuser-cell">Nome:</td>
+            <td class="tableinfuser-cell"><?php echo htmlspecialchars($usuario['nome'], ENT_QUOTES, 'UTF-8'); ?></td>
+        </tr>
+        <tr>
+            <td class="tableinfuser-cell">Email:</td>
+            <td class="tableinfuser-cell"><?php echo htmlspecialchars($usuario['email'], ENT_QUOTES, 'UTF-8'); ?></td>
+        </tr>
+        <tr>
+            <td class="tableinfuser-cell">Pontuação:</td>
+            <td class="tableinfuser-cell"><?php echo htmlspecialchars($usuario['pontuacao'], ENT_QUOTES, 'UTF-8'); ?></td>
+        </tr>
+    </table>
+</div>
+
 </body>
 </html>

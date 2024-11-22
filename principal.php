@@ -29,8 +29,7 @@
                 <img class="perfil-icone" src="<?php echo $imagem_perfil; ?>" alt="Perfil">
             </button>
             <div id="menuPerfil" class="dropdown-content">
-                <a href="infperfil.php">Minhas Informações</a>
-                <a href="perfil.php">Alterar Credenciais</a>
+                <a href="perfil.php">Gerenciar Perfil</a>
                 <a href="logout.php">Sair</a>
             </div>
         </div>
