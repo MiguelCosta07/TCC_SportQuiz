@@ -1,7 +1,10 @@
 <?php
 include 'conexao_bd.php';
 
-$query = "SELECT nome, pontuacao FROM usuarios ORDER BY pontuacao DESC";
+$query = "SELECT u.nome, r.pontuacao 
+          FROM usuarios u 
+          LEFT JOIN ranking r ON u.id = r.id_usuario 
+          ORDER BY r.pontuacao DESC";
 $result = $mysqli->query($query);
 
 if (!$result) {

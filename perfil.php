@@ -13,26 +13,36 @@ if (isset($_POST['nome']) && isset($_POST['senha'])) {
         $diretorio = 'imagem/uploads/';
         $nome_imagem = uniqid() . '_' . $foto['name'];
         $caminho_imagem = $diretorio . $nome_imagem;
-        
+
         if (move_uploaded_file($foto['tmp_name'], $caminho_imagem)) {
-            $sql_update_imagem = "UPDATE usuarios SET imagem_perfil = '$caminho_imagem' WHERE id = '$id'";
-            $mysqli->query($sql_update_imagem);
+            $sql_update_imagem = "UPDATE usuarios SET imagem_perfil = ? WHERE id = ?";
+            $stmt_imagem = $mysqli->prepare($sql_update_imagem);
+            $stmt_imagem->bind_param("si", $caminho_imagem, $id);
+            $stmt_imagem->execute();
         } else {
             echo "Erro ao carregar a imagem!";
         }
     }
 
-    $sql_update = "UPDATE usuarios SET nome = '$nome', senha = '$senha' WHERE id = '$id'";
-    if ($mysqli->query($sql_update)) {
+    $sql_update = "UPDATE usuarios SET nome = ?, senha = ? WHERE id = ?";
+    $stmt = $mysqli->prepare($sql_update);
+    $stmt->bind_param("ssi", $nome, $senha, $id);
+    if ($stmt->execute()) {
         echo "Credenciais atualizadas com sucesso!";
     } else {
         echo "Erro ao atualizar credenciais!";
     }
 }
 
-$sql_code = "SELECT * FROM usuarios WHERE id = '$id'";
-$sql_query = $mysqli->query($sql_code);
-$usuario = $sql_query->fetch_assoc();
+$sql_code = "SELECT u.*, r.pontuacao 
+             FROM usuarios u 
+             LEFT JOIN ranking r ON u.id = r.id_usuario 
+             WHERE u.id = ?";
+$stmt = $mysqli->prepare($sql_code);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$usuario = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>

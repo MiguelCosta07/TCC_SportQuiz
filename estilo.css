@@ -279,6 +279,7 @@ footer {
     padding-left: 4px;
     padding-right: 4px;
     position: static;
+    margin-left: 50px;
 }
 
 .ranking-container h1 {
@@ -366,7 +367,7 @@ footer {
     margin: 20px auto;
     text-align: center;
     position: relative;
-    bottom: 400px;
+    bottom: 200px;
     left: 100px;
 }
 
@@ -740,5 +741,103 @@ footer {
 .tableinfuser-table tr:hover {
     background-color: #1c6ebc; 
     transition: background-color 0.3s ease;
+}
+.result-body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f8ff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.result-container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.result-title {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.result-summary {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.result-score {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 25px;
+}
+
+.result-questions {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.result-subtitle {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.result-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result-item {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.result-status {
+    font-weight: bold;
+}
+
+.result-status.acertou {
+    color: #27ae60;
+}
+
+.result-status.errou {
+    color: #e74c3c;
+}
+
+.result-back {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.result-back:hover {
+    background-color: #2980b9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 

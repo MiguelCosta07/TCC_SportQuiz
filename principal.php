@@ -1,18 +1,32 @@
 <?php
-    if(!isset($_SESSION)) {
-        session_start();
-    }
+if (!isset($_SESSION)) {
+    session_start();
+}
 
-    include('conexao_bd.php');
-    $id = $_SESSION['id'];  
-    $sql_code = "SELECT * FROM usuarios WHERE id = '$id'"; 
-    $sql_query = $mysqli->query($sql_code);
-    $usuario = $sql_query->fetch_assoc();
+include('conexao_bd.php');
 
-    $pontuacao = $usuario['pontuacao']; 
-    $nome = $usuario['nome']; 
-    $imagem_perfil = isset($usuario['imagem_perfil']) && !empty($usuario['imagem_perfil']) ? $usuario['imagem_perfil'] : 'imagem/anonimo.png';
+$id = $_SESSION['id'];
+$id_esporte = 1;
+
+$sql_code = "
+    SELECT u.nome, u.imagem_perfil, 
+           r.pontuacao 
+    FROM usuarios u
+    LEFT JOIN ranking r ON u.id = r.id_usuario AND r.id_esporte = ?
+    WHERE u.id = ?
+";
+
+$stmt = $mysqli->prepare($sql_code);
+$stmt->bind_param("ii", $id_esporte, $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$usuario = $result->fetch_assoc();
+
+$pontuacao = isset($usuario['pontuacao']) ? $usuario['pontuacao'] : 0;
+$nome = $usuario['nome'];
+$imagem_perfil = !empty($usuario['imagem_perfil']) ? $usuario['imagem_perfil'] : 'imagem/anonimo.png';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
