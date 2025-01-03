@@ -1,29 +1,29 @@
 <?php
 include 'conexao_bd.php';
 
-$dificuldade = $_POST['dificuldade'];  
-$esporte_id = 1;  
+$dificuldade = $_POST['dificuldade'];
+$esporte_id = 1;
 
 if ($dificuldade == 'facil') {
-    $pontos = 1;  
+    $pontos = 1;
 } elseif ($dificuldade == 'medio') {
-    $pontos = 2; 
+    $pontos = 2;
 } elseif ($dificuldade == 'dificil') {
-    $pontos = 3; 
+    $pontos = 3;
 } else {
     die("Dificuldade inválida.");
 }
 
 $query = "SELECT * FROM perguntas WHERE id_esporte = ? AND id_dificuldade = ? ORDER BY RAND() LIMIT 3";
 $stmt = $mysqli->prepare($query);
-$stmt->bind_param("ii", $esporte_id, $pontos);  
+$stmt->bind_param("ii", $esporte_id, $pontos);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $perguntas = [];
     while ($row = $result->fetch_assoc()) {
-        $perguntas[] = $row;  
+        $perguntas[] = $row;
     }
 } else {
     die("Não há perguntas disponíveis para este esporte e dificuldade.");
@@ -32,18 +32,23 @@ if ($result->num_rows > 0) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <title>Quiz de Futebol</title>
 </head>
+
 <body class="quiz-body">
     <header class="quiz-cabec">
         <h1 class="quiz-tit">Quiz de Futebol</h1>
     </header>
     <main class="quiz-container">
-        <form action="resultado.php" method="post" class="quiz-form">
+        <form action="resultado.php" method="post" class="quiz-form" id="quizForm">
+            <div id="erro-msg" style="color: red; font-weight: bold; display: none;">
+                Você precisa responder todas as perguntas antes de finalizar o quiz!
+            </div>
             <?php foreach ($perguntas as $pergunta): ?>
                 <fieldset class="quiz-questao">
                     <legend class="question-tit"><?php echo $pergunta['questao']; ?></legend>
@@ -54,7 +59,7 @@ if ($result->num_rows > 0) {
                     $stmt_alternativas->execute();
                     $result_alternativas = $stmt_alternativas->get_result();
 
-                    while ($alternativa = $result_alternativas->fetch_assoc()):
+                    while ($alternativa = $result_alternativas->fetch_assoc()): 
                     ?>
                         <label class="quiz-opcao">
                             <input type="radio" name="pergunta_<?php echo $pergunta['id']; ?>" value="<?php echo $alternativa['id']; ?>" class="option-input">
@@ -67,5 +72,46 @@ if ($result->num_rows > 0) {
             <button type="submit" class="quiz-enviar">Finalizar Quiz</button>
         </form>
     </main>
+
+    <script>
+        // Função que valida se todas as perguntas foram respondidas
+        function validarRespostas() {
+            let erroMsg = document.getElementById("erro-msg");
+            let form = document.getElementById("quizForm");
+            let perguntas = form.querySelectorAll("fieldset"); // Seleciona todas as perguntas
+            let todasRespondidas = true;
+
+            perguntas.forEach(function(pergunta) {
+                let inputs = pergunta.querySelectorAll("input[type='radio']");
+                let respondida = false;
+
+                inputs.forEach(function(input) {
+                    if (input.checked) {
+                        respondida = true;
+                    }
+                });
+
+                if (!respondida) {
+                    todasRespondidas = false;
+                }
+            });
+
+            if (!todasRespondidas) {
+                erroMsg.style.display = "block"; // Exibe a mensagem de erro
+                return false; // Bloqueia o envio do formulário
+            } else {
+                erroMsg.style.display = "none"; // Esconde a mensagem de erro
+                return true; // Permite o envio do formulário
+            }
+        }
+
+        // Associa a função de validação ao evento de submit do formulário
+        document.getElementById("quizForm").onsubmit = function(event) {
+            if (!validarRespostas()) {
+                event.preventDefault(); // Impede o envio do formulário
+            }
+        };
+    </script>
 </body>
+
 </html>

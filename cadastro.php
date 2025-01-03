@@ -15,18 +15,21 @@ if (isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])) {
         $email = $mysqli->real_escape_string($_POST['email']);
         $senha = $mysqli->real_escape_string($_POST['senha']);
 
+        // Inserindo apenas o usuário na tabela de usuarios
         $sql_code = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
         $sql_query = $mysqli->query($sql_code);
 
         if ($sql_query) {
             echo "Cadastro realizado com sucesso!";
-            header("Location: index.php");
+            header("Location: index.php");  // Redireciona para o login após o cadastro
         } else {
             echo "Falha ao cadastrar usuário: " . $mysqli->error;
         }
     }
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,10 +37,7 @@ if (isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <title>SportQuiz</title>
-    <nav class="navbar">
-        <img class="logo" alt="imagemquiz" src="./imagem/testequiz.jpg">
-        <h1><a href="index.php">SportQuiz</a></h1>
-    </nav>
+    <h1 class="TituloLogCas"> SportQuiz </h1>
 </head>
 <body class="bodyprincipal">
     <div class="login">

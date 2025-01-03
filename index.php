@@ -45,10 +45,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <title>SportQuiz</title>
-    <nav class="navbar">
-        <img class="logo" alt="imagemquiz" src="./imagem/testequiz.jpg">
-        <h1><a href="index.php">SportQuiz</a></h1>
-    </nav>
+    <h1 class="TituloLogCas"> SportQuiz </h1>
 </head>
 <body class="bodyprincipal">
     <div class="login">

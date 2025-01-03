@@ -21,8 +21,8 @@
     background-color: white;
     align-items: center;
     margin-top: 90px;
-    margin-left: 540px;
-    margin-right: 540px;
+    margin-left: 50px;
+    margin-right: 50px;
     padding: 5px;
 }
 
@@ -113,7 +113,7 @@ transition: all 1s;
     height: 150px; 
     object-fit: cover;
     border-radius: 15px;
-    transition: all 1s; 
+    transition: all 1s;
 }
 
 .esporte:hover {
@@ -133,6 +133,7 @@ transition: all 1s;
     text-align: center;
     cursor: pointer;
     transition: all 1s;
+    padding-bottom: 17px;
 }
 
 .opcao:hover {
@@ -160,7 +161,7 @@ a {
     padding: 40px;
     box-sizing: border-box;
     backdrop-filter: brightness(40%);
-    margin: 170px;
+    margin: 120px;
     margin-left: 560px;
 }
 
@@ -266,76 +267,7 @@ footer {
     font-size: 14px;
 }
 
-.ranking-container {
-    width: 20%;
-    margin: 50px 0 0 30px;
-    background-color: #bab4b4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 50px;
-    max-width: 300px;
-    padding-left: 4px;
-    padding-right: 4px;
-    position: static;
-    margin-left: 50px;
-}
-
-.ranking-container h1 {
-    font-size: 1.3rem;
-    color: #333;
-    margin: 0;
-    padding: 10px 0;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    border-radius: 8px 8px 0 0;
-    white-space: nowrap;
-    text-transform: uppercase;
-    overflow: hidden;
-}
-
-
-.ranking-table {
-    width: 90%;
-    border-collapse: collapse;
-    margin: 0 auto;
-}
-
-.ranking-table thead {
-    background-color: #00bcd4; 
-    color: #fff;
-    font-size: 1.1rem;
-    font-family: 'Arial', sans-serif;
-}
-
-.ranking-table thead th {
-    padding: 10px;
-    text-align: center;
-}
-
-.ranking-table tbody tr:hover {
-    background-color: #80deea;
-    cursor: pointer;
-}
-
-.ranking-table td, .ranking-table th {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
-    font-size: 0.95rem;
-}
-
-.ranking-table tbody td {
-    font-family: 'Verdana', sans-serif;
-    color: #555;
-}
-
-.ranking-table tbody tr {
-    background-color: #ceedf1;
-    font-weight: bold;
-}
-.textofut {
+.textoesp {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -343,13 +275,13 @@ footer {
     align-items: center;
 }
 
-.textofut h3 {
+.textoesp h3 {
     color: #33e11f; 
     font-size: 22px;
     text-align: center;
 }
 
-.textofut p {
+.textoesp p {
     text-align: center;
     font-size: 16px;
     color: #ffffff; 
@@ -367,8 +299,8 @@ footer {
     margin: 20px auto;
     text-align: center;
     position: relative;
-    bottom: 200px;
-    left: 100px;
+    bottom: 5px;
+    left: 10px;
 }
 
 .form-container h2 {
@@ -628,6 +560,7 @@ footer {
     width: 100%;
     margin-bottom: 15px;
     text-align: left; 
+    margin-right: 23px;
 }
 
 .pag-perfil-label {
@@ -687,6 +620,52 @@ footer {
     margin-top: 15px;
     border: 3px solid #3498db;
 }
+
+.message-container {
+    margin: 20px 0;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.message {
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4caf50, #81c784); /* Gradiente para mensagens de sucesso */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.message:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10px;
+    background: #43a047; /* Barra lateral */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.message.error {
+    background: linear-gradient(135deg, #e53935, #ef5350); /* Gradiente para mensagens de erro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .tableinfuser {
     background-color: #09f382c3; 
     max-width: 300px;
@@ -839,5 +818,126 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+/* Estilo para o corpo da página */
+.bodysport {
+    background-color: #eaf1f7;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para o texto de boas-vindas */
+.texto-tenis {
+    background-color: #f3f4f6;
+    padding: 20px;
+    text-align: center;
+}
+
+.texto-tenis h3 {
+    font-size: 2rem;
+    color: #4CAF50;
+}
+
+/* Botões de iniciar quiz */
+.iniciar-quiz {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.iniciar-quiz:hover {
+    background-color: #45a049;
+}
+
+.texto-futebol {
+    font-size: 1.8rem;
+    color: #f04e23;
+}
+
+/* Container de opções de esportes (se tiver) */
+.opcao-futebol {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.futbol-logo {
+    max-width: 200px;
+    margin-right: 10px;
+}
+
+.TituloLogCas {
+    color: lightgray;
+    margin: 60px;
+    margin-left: 542px;
+    letter-spacing: 22px;
+    font-size: 42px;
+    padding-top: 50px
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.left-content {
+    width: 65%;
+    padding: 20px;
+}
+
+.right-content {
+    width: 30%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ranking-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.ranking-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.ranking-item:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.rank-name {
+    font-size: 18px;
+    color: #555;
+}
+
+.rank-score {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
 }
 
