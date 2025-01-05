@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03/01/2025 às 18:27
+-- Tempo de geração: 05/01/2025 às 19:06
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -486,15 +486,21 @@ CREATE TABLE `ranking` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `pontuacao` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Despejando dados para a tabela `ranking`
 --
 
 INSERT INTO `ranking` (`id`, `id_usuario`, `pontuacao`) VALUES
-(1, 3, 40),
-(8, 18, 3);
+(1, 1, 3),
+(2, 2, 2),
+(3, 6, 0),
+(4, 7, 0),
+(5, 4, 3),
+(6, 3, 0),
+(7, 5, 6),
+(8, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -504,30 +510,25 @@ INSERT INTO `ranking` (`id`, `id_usuario`, `pontuacao`) VALUES
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `nome` varchar(40) NOT NULL,
-  `senha` varchar(200) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `imagem_perfil` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nome` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `senha` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `imagem_perfil` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `senha`, `email`, `imagem_perfil`) VALUES
-(3, 'Admin', '123', 'admin@gmail.com', 'imagem/uploads/67411442d0e9f_Nitro_Wallpaper_5000x2813.jpg'),
-(18, 'Teste', '123', 'teste1@gmail.com', '');
-
---
--- Acionadores `usuarios`
---
-DELIMITER $$
-CREATE TRIGGER `after_insert_usuario` AFTER INSERT ON `usuarios` FOR EACH ROW BEGIN
-    INSERT INTO ranking (id_usuario, pontuacao, id_esporte)
-    VALUES (NEW.id, 0, NULL); -- Adicione valores padrão para pontuação e id_esporte
-END
-$$
-DELIMITER ;
+(1, 'Admin', '123', 'admin@gmail.com', 'imagem/uploads/677ac6e0ce871_Nitro_Wallpaper_5000x2813.jpg'),
+(2, 'teste', '123', 'teste@gmail.com', NULL),
+(3, 'Diogo', '123', 'diogo@gmail.com', NULL),
+(4, 'Miguel', '123', 'miguel@gmail.com', NULL),
+(5, 'João', '123', 'joao@gmail.com', NULL),
+(6, 'Ruan', '123', 'ruan@gmail.com', NULL),
+(7, 'Guilherme', '123', 'guiritter@gmail.com', NULL),
+(8, 'Caio', '123', 'caio@gmail.com', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -563,14 +564,13 @@ ALTER TABLE `perguntas`
 --
 ALTER TABLE `ranking`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_ranking_usuario` (`id_usuario`);
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -610,7 +610,7 @@ ALTER TABLE `ranking`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restrições para tabelas despejadas
@@ -626,7 +626,7 @@ ALTER TABLE `perguntas`
 -- Restrições para tabelas `ranking`
 --
 ALTER TABLE `ranking`
-  ADD CONSTRAINT `fk_ranking_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `ranking_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
