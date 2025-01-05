@@ -18,8 +18,8 @@ include 'conexao_bd.php';
 
 <body class="bodysport">
     <div class="textoesp">
-    <h3>"Bem-vindo ao desafio dos craques!" </h3>
-    <p> 🏆</p>
+    <h3>"Bem-vindo ao desafio das mesas!" 🏓</h3>
+    <p>Você é fera no tênis de mesa? Agora é a hora de mostrar que conhece todos os detalhes desse esporte rápido e técnico! De grandes campeões a momentos épicos nas mesas, teste seus conhecimentos e conquiste seu lugar no ranking. Boa sorte! 🏆</p>
     </div>
 
     <div class="form-container">

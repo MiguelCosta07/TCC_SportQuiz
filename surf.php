@@ -18,8 +18,9 @@ include 'conexao_bd.php';
 
 <body class="bodysport">
     <div class="textoesp">
-    <h3>"Bem-vindo ao desafio dos craques!" </h3>
-    <p> 🏆</p>
+    <h3>"Bem-vindo ao desafio das ondas!" 🏄‍♂️</h3>
+    <p>Se você é fã das ondas e do mar, chegou ao lugar certo! Teste seus conhecimentos sobre surfe, desde as manobras mais radicais até as maiores lendas dos mares. Está preparado para desafiar as ondas do conhecimento e conquistar seu lugar no ranking? Boa sorte! 🏆</p>
+
     </div>
 
     <div class="form-container">

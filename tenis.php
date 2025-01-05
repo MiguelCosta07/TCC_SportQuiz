@@ -18,8 +18,8 @@ include 'conexao_bd.php';
 
 <body class="bodysport">
     <div class="textoesp">
-    <h3>"Bem-vindo ao desafio dos craques!" </h3>
-    <p> 🏆</p>
+    <h3>"Bem-vindo ao desafio da raquete!" 🎾</h3>
+    <p>Prepare-se para colocar à prova seus conhecimentos sobre tênis! De Roland Garros a Wimbledon, teste tudo sobre os maiores campeões e momentos inesquecíveis desse esporte. Você tem o que é preciso para ser um campeão? Conquiste o topo do ranking! Boa sorte! 🏆</p>
     </div>
 
     <div class="form-container">

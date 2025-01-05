@@ -18,8 +18,8 @@ include 'conexao_bd.php';
 
 <body class="bodysport">
     <div class="textoesp">
-        <h3>"Bem-vindo ao desafio dos craques!" </h3>
-        <p> 🏆</p>
+    <h3>"Bem-vindo ao desafio das quadras!" 🏀</h3>
+    <p>Entre no ritmo do basquete e mostre que você é um verdadeiro fã! Teste seus conhecimentos sobre os maiores times, jogadores lendários e momentos históricos das competições internacionais. Será que você consegue fazer uma cesta de conhecimento e alcançar o topo do ranking? Boa sorte! 🏆</p>
     </div>
 
     <div class="form-container">
