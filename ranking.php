@@ -5,10 +5,9 @@ if (!isset($_SESSION)) {
 
 include('conexao_bd.php');
 
-// Verifica se o usuário está logado
-$id_usuario_atual = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : null;
-
 // Recupera os dados do ranking completo
+$ranking_completo = [];  // Inicializa como um array vazio para evitar erro
+
 $sql_ranking_completo = "
     SELECT u.nome, r.pontuacao 
     FROM ranking r
@@ -22,36 +21,6 @@ if (!$result_ranking_completo) {
 }
 
 $ranking_completo = $result_ranking_completo->fetch_all(MYSQLI_ASSOC);
-
-// Recupera a posição e pontuação do usuário atual
-$usuario_posicao = null;
-$usuario_pontuacao = null;
-
-if ($id_usuario_atual !== null) {
-    // Preparar a consulta com placeholders para evitar SQL Injection
-    $sql_usuario_ranking = "SELECT r.pontuacao FROM ranking r WHERE r.id_usuario = ?";
-    
-    // Preparar o statement
-    $stmt = $mysqli->prepare($sql_usuario_ranking);
-    $stmt->bind_param("i", $id_usuario_atual); // "i" é para inteiro
-    $stmt->execute();
-    
-    // Obter o resultado
-    $result_usuario_ranking = $stmt->get_result();
-    
-    if ($result_usuario_ranking->num_rows > 0) {
-        $usuario_info = $result_usuario_ranking->fetch_assoc();
-        $usuario_pontuacao = $usuario_info['pontuacao'];
-
-        // Encontrar a posição do usuário no ranking
-        foreach ($ranking_completo as $index => $rank) {
-            if ($rank['nome'] === $_SESSION['nome_usuario']) {
-                $usuario_posicao = $index + 1; // A posição começa de 1
-                break;
-            }
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -80,27 +49,22 @@ if ($id_usuario_atual !== null) {
             </div>
             <ul class="ranking-completo-list">
                 <?php 
-                $posicao = 1;  // Inicia a posição com 1
-                foreach ($ranking_completo as $rank): 
+                if (!empty($ranking_completo)) { // Verifica se o ranking está vazio
+                    $posicao = 1;  // Inicia a posição com 1
+                    foreach ($ranking_completo as $rank): 
                 ?>
-                    <li class="ranking-completo-item">
-                        <span class="ranking-completo-position"><?php echo $posicao++; ?>º</span>
-                        <span class="ranking-completo-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
-                        <span class="ranking-completo-score"><?php echo $rank['pontuacao']; ?> pts</span>
-                    </li>
-                <?php endforeach; ?>
+                        <li class="ranking-completo-item">
+                            <span class="ranking-completo-position"><?php echo $posicao++; ?>º</span>
+                            <span class="ranking-completo-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
+                            <span class="ranking-completo-score"><?php echo $rank['pontuacao']; ?> pts</span>
+                        </li>
+                <?php 
+                    endforeach;
+                } else {
+                    echo "<li>Nenhum dado de ranking encontrado.</li>";
+                }
+                ?>
             </ul>
-        </div>
-
-        <!-- Painel Lateral com a colocação e pontuação do usuário -->
-        <div class="ranking-sidebar">
-            <?php if ($usuario_posicao !== null): ?>
-                <h3>Seu Ranking</h3>
-                <p><strong>Posição:</strong> <?php echo $usuario_posicao; ?>º</p>
-                <p><strong>Pontuação:</strong> <?php echo $usuario_pontuacao; ?> pts</p>
-            <?php else: ?>
-                <p>Você ainda não entrou no ranking!</p>
-            <?php endif; ?>
         </div>
     </div>
 
