@@ -80,7 +80,7 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
 
     <div class="content">
         <div class="left-content">
-            <h2 class="escolha">Selecione seu esporte favorito:</h2>
+            <h2 class="escolha">Selecione o Esporte</h2>
             <div class="esporte-container">
                 <form method="post">
                     <div class="opcao">
@@ -116,17 +116,23 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
                 </form>
             </div>
         </div>
-        <div class="right-content">
-            <h2 class="ranking-title">Ranking</h2>
-            <ul class="ranking-list">
-                <?php foreach ($ranking as $rank): ?>
-                    <li class="ranking-item">
-                        <span class="rank-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
-                        <span class="rank-score"><?php echo $rank['pontuacao']; ?> pontos</span>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
+        <!-- Parte do Ranking -->
+<div class="right-content">
+    <h2 class="ranking-title">Ranking</h2>
+    <ul class="ranking-list">
+        <?php foreach ($ranking as $rank): ?>
+            <li class="ranking-item">
+                <span class="rank-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
+                <span class="rank-score"><?php echo $rank['pontuacao']; ?> pontos</span>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <!-- Botão "Ver Ranking Completo" -->
+    <div class="view-full-ranking">
+        <a href="ranking.php" class="btn-ranking">Ver Ranking Completo</a>
+    </div>
+</div>
+
     </div>
 
     <footer>
@@ -176,6 +182,11 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
 
         // Muda a imagem automaticamente a cada 5 segundos
         setInterval(nextSlide, 5000); // 5000 milissegundos = 5 segundos
+
+        function toggleMenu() {
+    var menu = document.getElementById('menuPerfil');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
     </script>
 </body>
 </html>
