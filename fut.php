@@ -22,20 +22,6 @@ include 'conexao_bd.php';
         <p>Entre no clima do esporte mais amado do mundo e teste seus conhecimentos sobre futebol! Aqui, você encontrará perguntas que vão desde as curiosidades históricas até os maiores momentos das competições globais. Será que você é mesmo um especialista da bola ou só um torcedor apaixonado? Prove que entende do assunto e conquiste seu lugar no ranking! Boa sorte! 🏆</p>
     </div>
 
-    <div class="form-container">
-        <h2>Escolha a dificuldade para começar o Quiz.</h2>
-        <form action="quizfut.php" method="post">
-            <label for="dificuldade">Boa Sorte !</label>
-            <select name="dificuldade" id="dificuldade">
-                <option value="facil">Fácil</option>
-                <option value="medio">Médio</option>
-                <option value="dificil">Difícil</option>
-            </select>
-            <br>
-            <button type="submit" class="iniciar-quiz">Iniciar Quiz</button>
-        </form>
-    </div>
-
     <div class="quiz-introducao">
         <h2>Como funciona o quiz?</h2>
         <p>Bem-vindo ao quiz de futebol do SportQuiz! Aqui, você irá testar seus conhecimentos sobre o futebol com perguntas de diferentes níveis de dificuldade. A cada pergunta, você terá quatro alternativas para escolher, sendo uma delas a resposta correta.</p>
@@ -50,6 +36,20 @@ include 'conexao_bd.php';
         </ol>
 
         <p>Vamos começar! Escolha a dificuldade abaixo para iniciar seu desafio.</p>
+    </div>
+
+    <div class="form-container">
+        <h2>Escolha a dificuldade para começar o Quiz.</h2>
+        <form action="quizfut.php" method="post">
+            <label for="dificuldade">Boa Sorte !</label>
+            <select name="dificuldade" id="dificuldade">
+                <option value="facil">Fácil</option>
+                <option value="medio">Médio</option>
+                <option value="dificil">Difícil</option>
+            </select>
+            <br>
+            <button type="submit" class="iniciar-quiz">Iniciar Quiz</button>
+        </form>
     </div>
 
 </body>

@@ -9,7 +9,7 @@ include('conexao_bd.php');
 $ranking_completo = [];  // Inicializa como um array vazio para evitar erro
 
 $sql_ranking_completo = "
-    SELECT u.nome, r.pontuacao 
+    SELECT u.nome, u.imagem_perfil, r.pontuacao 
     FROM ranking r
     JOIN usuarios u ON r.id_usuario = u.id
     ORDER BY r.pontuacao DESC
@@ -41,7 +41,7 @@ $ranking_completo = $result_ranking_completo->fetch_all(MYSQLI_ASSOC);
     <div class="ranking-completo-wrapper">
         <!-- Coluna do Ranking Completo -->
         <div class="ranking-completo-container">
-            <h2 class="ranking-completo-title">Ranking Completo</h2>
+            <h2 class="ranking-completo-title">Ranking Mundial</h2>
             <div class="ranking-header">
                 <span class="ranking-header-item">Posição</span>
                 <span class="ranking-header-item">Usuário</span>
@@ -55,7 +55,14 @@ $ranking_completo = $result_ranking_completo->fetch_all(MYSQLI_ASSOC);
                 ?>
                         <li class="ranking-completo-item">
                             <span class="ranking-completo-position"><?php echo $posicao++; ?>º</span>
-                            <span class="ranking-completo-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
+                            <div class="ranking-completo-user">
+                                <?php 
+                                // Verifica se a imagem de perfil existe, senão exibe a imagem padrão
+                                $imagem_perfil = !empty($rank['imagem_perfil']) ? $rank['imagem_perfil'] : 'imagem/anonimo.png'; 
+                                ?>
+                                <img src="<?php echo $imagem_perfil; ?>" alt="Imagem de Perfil" class="ranking-completo-img">
+                                <span class="ranking-completo-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
+                            </div>
                             <span class="ranking-completo-score"><?php echo $rank['pontuacao']; ?> pts</span>
                         </li>
                 <?php 

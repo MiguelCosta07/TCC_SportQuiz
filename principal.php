@@ -29,7 +29,7 @@ $sql_ranking = "
     FROM ranking r
     JOIN usuarios u ON r.id_usuario = u.id
     ORDER BY r.pontuacao DESC
-    LIMIT 10
+    LIMIT 7
 ";
 
 $result_ranking = $mysqli->query($sql_ranking);
@@ -117,21 +117,26 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
             </div>
         </div>
         <!-- Parte do Ranking -->
-<div class="right-content">
-    <h2 class="ranking-title">Ranking</h2>
-    <ul class="ranking-list">
-        <?php foreach ($ranking as $rank): ?>
-            <li class="ranking-item">
-                <span class="rank-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
-                <span class="rank-score"><?php echo $rank['pontuacao']; ?> pontos</span>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+    <div class="right-content">
+        <h2 class="ranking-title">Top 7 no Ranking</h2>
+        <ul class="ranking-list">
+            <?php 
+            $posicao = 1; // Variável para rastrear a posição
+            foreach ($ranking as $rank): ?>
+                <li class="ranking-item">
+                 <span class="rank-position"><?php echo $posicao; ?>º</span> <!-- Mostra a posição -->
+                 <span class="rank-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
+                 <span class="rank-score"><?php echo $rank['pontuacao']; ?> pontos</span>
+                </li>
+            <?php $posicao++; // Incrementa a posição ?>
+            <?php endforeach; ?>
+        </ul>
     <!-- Botão "Ver Ranking Completo" -->
-    <div class="view-full-ranking">
-        <a href="ranking.php" class="btn-ranking">Ver Ranking Completo</a>
+        <div class="view-full-ranking">
+          <a href="ranking.php" class="btn-ranking">Ver Ranking Completo</a>
+        </div>
     </div>
-</div>
+
 
     </div>
 

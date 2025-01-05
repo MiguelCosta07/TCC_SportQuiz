@@ -1,12 +1,13 @@
 <?php
     include ('conexao_bd.php');
+    $erro = "";  // Variável para armazenar a mensagem de erro
 
     if(isset($_POST['email']) || isset($_POST['senha'])){
 
         if(strlen($_POST['email']) == 0) {
-            echo "Preencha seu email";
+            $erro = "Preencha seu email";
         } else if(strlen($_POST['senha']) == 0) {
-            echo "Preencha sua senha";
+            $erro = "Preencha sua senha";
         } else {
             
             $email = $mysqli->real_escape_string($_POST['email']);
@@ -31,7 +32,7 @@
                 header("Location: principal.php");
 
             } else {
-                echo "Falha ao logar! Email ou senha incorretos!";
+                $erro = "Falha ao logar! Email ou senha incorretos!";
             }
 
         }
@@ -50,6 +51,11 @@
 <body class="bodyprincipal">
     <div class="login">
         <form class="logcas" action="" method="POST">
+
+        <?php if($erro): ?>
+            <div class="erro-mensagem"><?php echo $erro; ?></div>
+        <?php endif; ?>
+
             <h1>Acesso</h1>
             <label for="email">E-mail</label>
             <input class="escrever" type="email" name="email" required>

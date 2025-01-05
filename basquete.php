@@ -22,10 +22,26 @@ include 'conexao_bd.php';
     <p>Entre no ritmo do basquete e mostre que você é um verdadeiro fã! Teste seus conhecimentos sobre os maiores times, jogadores lendários e momentos históricos das competições internacionais. Será que você consegue fazer uma cesta de conhecimento e alcançar o topo do ranking? Boa sorte! 🏆</p>
     </div>
 
+    <div class="quiz-introducao">
+        <h2>Como funciona o quiz?</h2>
+        <p>Bem-vindo ao quiz de futebol do SportQuiz! Aqui, você irá testar seus conhecimentos sobre o futebol com perguntas de diferentes níveis de dificuldade. A cada pergunta, você terá quatro alternativas para escolher, sendo uma delas a resposta correta.</p>
+
+        <p>O objetivo é acertar o maior número de perguntas possíveis e somar pontos para conquistar uma boa posição no nosso ranking. A dificuldade das perguntas pode ser ajustada, e quanto maior a dificuldade, mais pontos você ganhará por acertar a questão!</p>
+
+        <h3>Etapas do Quiz:</h3>
+        <ol>
+            <li><strong>Escolha a dificuldade:</strong> Fácil, Médio ou Difícil.</li>
+            <li><strong>Responda as perguntas:</strong> A cada questão, escolha uma das alternativas.</li>
+            <li><strong>Veja sua pontuação:</strong> Depois de responder, você verá sua pontuação e poderá tentar novamente para melhorar.</li>
+        </ol>
+
+        <p>Vamos começar! Escolha a dificuldade abaixo para iniciar seu desafio.</p>
+    </div>
+
     <div class="form-container">
-        <h2>Para começar um Quiz com perguntas aleatórias, primeiro escolha a dificuldade das questões.</h2>
+        <h2>Escolha a dificuldade para começar o Quiz.</h2>
         <form action="quizbasquete.php" method="post">
-            <label for="dificuldade">Lembrando que quanto maior a dificuldade, mais pontos:</label>
+            <label for="dificuldade">Boa Sorte !</label>
             <select name="dificuldade" id="dificuldade">
                 <option value="facil">Fácil</option>
                 <option value="medio">Médio</option>
@@ -34,6 +50,7 @@ include 'conexao_bd.php';
             <button type="submit" class="iniciar-quiz">Iniciar Quiz</button>
         </form>
     </div>
+    
 </body>
 
 <footer>

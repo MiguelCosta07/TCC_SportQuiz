@@ -1,34 +1,43 @@
 <?php
 include('conexao_bd.php');
 
+$erro = "";  // Variável para armazenar a mensagem de erro
+
 if (isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])) {
 
     if (strlen($_POST['nome']) == 0) {
-        echo "Preencha seu nome";
+        $erro = "Preencha seu nome";
     } else if (strlen($_POST['email']) == 0) {
-        echo "Preencha seu email";
+        $erro = "Preencha seu email";
     } else if (strlen($_POST['senha']) == 0) {
-        echo "Preencha sua senha";
+        $erro = "Preencha sua senha";
     } else {
 
         $nome = $mysqli->real_escape_string($_POST['nome']);
         $email = $mysqli->real_escape_string($_POST['email']);
         $senha = $mysqli->real_escape_string($_POST['senha']);
 
-        // Inserindo apenas o usuário na tabela de usuarios
-        $sql_code = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+        // Verificando se o nome ou o email já estão em uso
+        $sql_code = "SELECT * FROM usuarios WHERE email = '$email' OR nome = '$nome'";
         $sql_query = $mysqli->query($sql_code);
 
-        if ($sql_query) {
-            echo "Cadastro realizado com sucesso!";
-            header("Location: index.php");  // Redireciona para o login após o cadastro
+        if ($sql_query->num_rows > 0) {
+            $erro = "Nome ou e-mail já estão em uso. Tente outro.";
         } else {
-            echo "Falha ao cadastrar usuário: " . $mysqli->error;
+            // Inserindo o usuário na tabela de usuarios
+            $sql_code = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+            $sql_query = $mysqli->query($sql_code);
+
+            if ($sql_query) {
+                echo "Cadastro realizado com sucesso!";
+                header("Location: index.php");  // Redireciona para o login após o cadastro
+            } else {
+                $erro = "Falha ao cadastrar usuário: " . $mysqli->error;
+            }
         }
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,6 +51,11 @@ if (isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])) {
 <body class="bodyprincipal">
     <div class="login">
         <form class="logcas" action="" method="POST">
+
+        <?php if($erro): ?>
+            <div class="erro-mensagem"><?php echo $erro; ?></div>
+        <?php endif; ?>
+
             <h1>Cadastro</h1>
             <label for="nome">Nome</label>
             <input class="escrever" type="text" name="nome" required minlength="5">

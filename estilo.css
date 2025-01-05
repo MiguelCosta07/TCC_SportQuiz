@@ -30,6 +30,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    box-shadow: 0 7px 14px rgba(255, 255, 255, 0.4); /* Sombra branca */
 }
 
 .navbar .logo {
@@ -998,7 +999,12 @@ footer {
 
 .tituloprincipal {
     text-align: center;
-    color: #0097a7;
+    color: #3c054a;
+    text-shadow: 
+        -0.5px -0.5px 0 #ffffff, /* Sombra para cima-esquerda */
+         0.5px -0.5px 0 #ffffff, /* Sombra para cima-direita */
+        -0.5px  0.5px 0 #ffffff, /* Sombra para baixo-esquerda */
+         0.5px  0.5px 0 #ffffff; /* Sombra para baixo-direita */
 }
 
 .textointroducao {
@@ -1240,7 +1246,6 @@ footer {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    text-align: center;
     padding-left: 44px;
 }
 
@@ -1362,4 +1367,49 @@ footer {
     font-size: 14px;
     border-top: 1px solid #555;
     padding-top: 10px;
+}
+
+/* Estilo da mensagem de erro */
+.erro-mensagem {
+    background-color: #ff4c4c; /* Cor de fundo vermelha */
+    color: white; /* Texto branco */
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animação de fade-in para a mensagem de erro */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Quando a mensagem de erro está sendo exibida, ela aparece de forma suave */
+.erro-mensagem {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* Estilo para a imagem de perfil */
+.ranking-completo-img {
+    width: 30px; /* Tamanho da imagem */
+    height: 30px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    margin-right: 10px; /* Espaço entre a imagem e o nome */
+    margin-left: 45px;
+    object-fit: cover; /* Faz com que a imagem se ajuste ao tamanho do container */
+}
+
+.ranking-completo-user {
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
