@@ -22,6 +22,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $alterou_nome = false;
     $alterou_senha = false;
 
+    // Verifica se o nome de usuário já está em uso
+    if ($nome) {
+        $sql_check_nome = "SELECT id FROM usuarios WHERE nome = ? AND id != ?";
+        $stmt_check = $mysqli->prepare($sql_check_nome);
+        $stmt_check->bind_param("si", $nome, $id);
+        $stmt_check->execute();
+        $check_result = $stmt_check->get_result();
+
+        if ($check_result->num_rows > 0) {
+            $message = "Esse nome de usuário já está em uso. Por favor, escolha outro.";
+        } else {
+            // Verifica se o nome foi alterado
+            if ($nome !== $usuario['nome']) {
+                $sql_update_nome = "UPDATE usuarios SET nome = ? WHERE id = ?";
+                $stmt_nome = $mysqli->prepare($sql_update_nome);
+                $stmt_nome->bind_param("si", $nome, $id);
+                $stmt_nome->execute();
+                $alterou_nome = true;
+            }
+        }
+    }
+
     // Verifica se a imagem foi enviada
     if (isset($_FILES['fotoPerfil']) && $_FILES['fotoPerfil']['error'] == 0) {
         $foto = $_FILES['fotoPerfil'];
@@ -65,15 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = "A senha atual está incorreta!";
     }
 
-    // Verifica se o nome foi alterado
-    if ($nome && $nome !== $usuario['nome']) {
-        $sql_update_nome = "UPDATE usuarios SET nome = ? WHERE id = ?";
-        $stmt_nome = $mysqli->prepare($sql_update_nome);
-        $stmt_nome->bind_param("si", $nome, $id);
-        $stmt_nome->execute();
-        $alterou_nome = true;
-    }
-
     // Exibe a mensagem de acordo com as alterações feitas
     if ($alterou_imagem && $alterou_nome && $alterou_senha) {
         $message = "Você alterou sua foto de perfil, nome e senha com sucesso!";
@@ -103,6 +116,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 $usuario = $result->fetch_assoc();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
