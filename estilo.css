@@ -34,16 +34,18 @@
 }
 
 .navbar .logo {
-    width: 59px;
+    height: 59px;
+    padding: 5px;
+    border-radius: 20px;    
 }
 
 .navbar h1 {
-    flex: 0 1 auto; 
-    text-align: left;
+    flex: 1 1 auto; 
+    text-align: center;
     font-weight: 400;
     text-shadow: 2px 2px 2px rgb(10, 99, 181);
     color: black;
-    font-size: 24px;
+    font-size: 34px;
     padding: 6px;
     margin-right: 0;  
     transition: all 0.3s ease; 
@@ -52,12 +54,10 @@
 .navbar h1:hover {
     padding: 6px;
     border-radius: 12px;
-    background-color: rgba(60, 60, 60, 0.3);
-    text-align: left;
+    background-color: rgba(1, 1, 1, 0.3);
     text-shadow: 2px 2px 2px rgb(10, 99, 181);
     color: black;
     transition: all 0.3s ease;
-
 }
 
 .navbar .nav-links {
@@ -1048,7 +1048,7 @@ footer {
 .rodapecarousel {
     align-items: center;
     text-align: center;
-    color: #2c2d2d;
+    color: #eff1f1;
 }
 
 .tituloprincipal {
@@ -1366,7 +1366,7 @@ footer {
 .logo-ranking {
     height: 59px;
     padding: 5px;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 
 .dropdown-content-ranking {

@@ -32,7 +32,7 @@ $ranking_completo = $result_ranking_completo->fetch_all(MYSQLI_ASSOC);
     <title>Ranking Completo - SportQuiz</title>
     <!-- Navbar -->
     <nav class="navbarranking">
-        <img class="logo-ranking" alt="imagemquiz" src="./imagem/testequiz.jpg">
+        <img class="logo-ranking" alt="imagemquiz" src="./imagem/testequiz.png">
         <h1><a href="principal.php" class="nav-title">SportQuiz</a></h1>
     </nav>
 </head>

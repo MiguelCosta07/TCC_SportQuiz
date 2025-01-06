@@ -44,7 +44,7 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
     <link rel="stylesheet" href="estilo.css">
     <title>SportQuiz</title>
     <nav class="navbar">
-        <img class="logo" alt="imagemquiz" src="./imagem/testequiz.jpg">
+        <img class="logo" alt="imagemquiz" src="./imagem/testequiz.png">
         <h1><a href="principal.php">SportQuiz</a></h1>
         <div class="perfil">
             <button class="perfil-btn" onclick="toggleMenu()">
