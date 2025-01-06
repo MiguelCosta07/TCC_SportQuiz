@@ -40,15 +40,14 @@
 }
 
 .navbar h1 {
-    flex: 1 1 auto; 
-    text-align: center;
+    margin-left: 560px;
     font-weight: 400;
     text-shadow: 2px 2px 2px rgb(10, 99, 181);
     color: black;
-    font-size: 34px;
+    font-size: 32px;
     padding: 6px;
     margin-right: 0;  
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 
 .navbar h1:hover {
@@ -1346,10 +1345,11 @@ footer {
     font-weight: 400;
     text-shadow: 2px 2px 2px rgb(9, 9, 9);
     color: rgb(255, 255, 255);
-    font-size: 24px;
+    font-size: 32px;
     padding: 6px;
     margin-right: 0;  
     transition: all 0.3s ease;
+    margin-left: 560px;
 }
 
 .navbarranking h1:hover {

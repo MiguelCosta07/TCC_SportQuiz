@@ -41,7 +41,7 @@ $ranking_completo = $result_ranking_completo->fetch_all(MYSQLI_ASSOC);
     <div class="ranking-completo-wrapper">
         <!-- Coluna do Ranking Completo -->
         <div class="ranking-completo-container">
-            <h2 class="ranking-completo-title">Ranking Mundial</h2>
+            <h2 class="ranking-completo-title">Ranking</h2>
             <div class="ranking-header">
                 <span class="ranking-header-item">Posição</span>
                 <span class="ranking-header-item">Usuário</span>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/01/2025 às 19:06
+-- Tempo de geração: 06/01/2025 às 17:34
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -493,14 +493,7 @@ CREATE TABLE `ranking` (
 --
 
 INSERT INTO `ranking` (`id`, `id_usuario`, `pontuacao`) VALUES
-(1, 1, 3),
-(2, 2, 2),
-(3, 6, 0),
-(4, 7, 0),
-(5, 4, 3),
-(6, 3, 0),
-(7, 5, 6),
-(8, 8, 1);
+(9, 9, 0);
 
 -- --------------------------------------------------------
 
@@ -521,14 +514,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `senha`, `email`, `imagem_perfil`) VALUES
-(1, 'Admin', '123', 'admin@gmail.com', 'imagem/uploads/677ac6e0ce871_Nitro_Wallpaper_5000x2813.jpg'),
-(2, 'teste', '123', 'teste@gmail.com', NULL),
-(3, 'Diogo', '123', 'diogo@gmail.com', NULL),
-(4, 'Miguel', '123', 'miguel@gmail.com', NULL),
-(5, 'João', '123', 'joao@gmail.com', NULL),
-(6, 'Ruan', '123', 'ruan@gmail.com', NULL),
-(7, 'Guilherme', '123', 'guiritter@gmail.com', NULL),
-(8, 'Caio', '123', 'caio@gmail.com', NULL);
+(9, 'miguel', '$2y$10$AnII1Nqeh96ox.2CM7ZX6u5DVc6IGRwjDBt6QzGGSgFJyfJn4S0s2', 'miguel@gmail.com', 'imagem/uploads/677c021a88219_perfilmiguel.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -604,13 +590,13 @@ ALTER TABLE `perguntas`
 -- AUTO_INCREMENT de tabela `ranking`
 --
 ALTER TABLE `ranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para tabelas despejadas
