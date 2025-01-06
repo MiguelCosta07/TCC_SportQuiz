@@ -29,7 +29,7 @@ $sql_ranking = "
     FROM ranking r
     JOIN usuarios u ON r.id_usuario = u.id
     ORDER BY r.pontuacao DESC
-    LIMIT 7
+    LIMIT 5
 ";
 
 $result_ranking = $mysqli->query($sql_ranking);
@@ -74,9 +74,17 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
         </div>
     </div>
 
-    <div class="textointroducao">
-        <p>No SportQuiz, você pode testar seus conhecimentos sobre esportes de forma divertida e desafiadora! Com quizzes sobre futebol, tênis, basquete e muito mais, você pode competir com outros usuários e aprender mais enquanto se diverte. Desafie-se agora e veja como você se sai no ranking!</p>
+    <div class="container-introducao">
+    <div class="titulo-introducao">
+        <h2>O que é o SportQuiz?</h2>
     </div>
+    <div class="textointroducao">
+        <p>
+            O SportQuiz é uma plataforma interativa onde os usuários podem testar seus conhecimentos sobre esportes através de quizzes divertidos. Se você ama futebol, basquete, vôlei ou qualquer outro esporte, este é o lugar perfeito para você aprender e se divertir!
+        </p>
+    </div>
+</div>
+
 
     <div class="content">
         <div class="left-content">
@@ -118,19 +126,32 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
         </div>
         <!-- Parte do Ranking -->
     <div class="right-content">
-        <h2 class="ranking-title">Top 7 no Ranking</h2>
+        <h2 class="ranking-title">Top 5 no Ranking</h2>
         <ul class="ranking-list">
-            <?php 
-            $posicao = 1; // Variável para rastrear a posição
-            foreach ($ranking as $rank): ?>
-                <li class="ranking-item">
-                 <span class="rank-position"><?php echo $posicao; ?>º</span> <!-- Mostra a posição -->
-                 <span class="rank-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
-                 <span class="rank-score"><?php echo $rank['pontuacao']; ?> pontos</span>
-                </li>
-            <?php $posicao++; // Incrementa a posição ?>
-            <?php endforeach; ?>
-        </ul>
+    <?php 
+    $posicao = 1; // Variável para rastrear a posição
+    foreach ($ranking as $rank): ?>
+        <li class="ranking-item">
+            <span class="rank-position"><?php echo $posicao . 'º'; ?></span>
+            <span class="rank-medal">
+                <?php 
+                // Adiciona o emoji de medalha dependendo da posição
+                if ($posicao == 1) {
+                    echo '🥇'; // Medalha de ouro
+                } elseif ($posicao == 2) {
+                    echo '🥈'; // Medalha de prata
+                } elseif ($posicao == 3) {
+                    echo '🥉'; // Medalha de bronze
+                }
+                ?>
+            </span>
+            <span class="rank-name"><?php echo htmlspecialchars($rank['nome']); ?></span>
+            <span class="rank-score"><?php echo $rank['pontuacao']; ?> pontos</span>
+        </li>
+    <?php $posicao++; // Incrementa a posição ?>
+    <?php endforeach; ?>
+</ul>
+
     <!-- Botão "Ver Ranking Completo" -->
         <div class="view-full-ranking">
           <a href="ranking.php" class="btn-ranking">Ver Ranking Completo</a>

@@ -922,14 +922,16 @@ footer {
     border-left: 2px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
 }
 
 .ranking-title {
-    font-size: 24px;
+    font-size: 2em;
     font-weight: bold;
-    color: #333;
+    color: #2a1452; /* Título em branco para contrastar com o fundo azul */
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Sombra suave para destacar */
 }
 
 .ranking-list {
@@ -940,31 +942,62 @@ footer {
 
 .ranking-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
     align-items: center;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: background-color 0.3s, transform 0.2s;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave para um toque moderno */
+    transition: all 0.3s ease;
+    position: relative; /* Necessário para o posicionamento relativo da medalha */
 }
 
 .ranking-item:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-2px);
+    background-color: #e9f4ff; /* Tom azul muito claro ao passar o mouse */
+    transform: translateY(-5px); /* Efeito mais suave de elevação */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Aumenta a sombra ao passar o mouse */
+}
+
+.rank-position {
+    flex-shrink: 0;
+    font-size: 1.2em;
+}
+
+.rank-medal {
+    font-size: 19px; /* Ajusta o tamanho da medalha */
+    margin-left: 10px; /* Espaço entre a posição e a medalha */
+    transition: all 0.3s ease; /* Transição suave para a medalha */
 }
 
 .rank-name {
-    font-size: 18px;
-    color: #555;
+    flex-grow: 1; /* Faz o nome ocupar o espaço restante */
+    text-align: center; /* Centraliza o nome no espaço disponível */
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
 }
 
 .rank-score {
-    font-size: 16px;
+    font-size: 1.2em;
     font-weight: bold;
-    color: #007bff;
+    color: #3c9ae8; /* Cor azul suave para a pontuação */
+    margin-left: 15px;
 }
+
+
+.rank-name {
+    font-size: 1.2em;
+    color: #333; /* Cor mais suave para o nome */
+}
+
+.rank-score {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3c9ae8; /* Cor azul suave para a pontuação */
+    margin-left: 15px;
+}
+
 
 /* Estilos do carousel */
 .carousel-container {
@@ -999,30 +1032,50 @@ footer {
 
 .tituloprincipal {
     text-align: center;
-    color: #3c054a;
+    color: #ffffff; /* Cor branca */
     text-shadow: 
-        -0.5px -0.5px 0 #ffffff, /* Sombra para cima-esquerda */
-         0.5px -0.5px 0 #ffffff, /* Sombra para cima-direita */
-        -0.5px  0.5px 0 #ffffff, /* Sombra para baixo-esquerda */
-         0.5px  0.5px 0 #ffffff; /* Sombra para baixo-direita */
+        0 1px 2px rgba(0, 0, 0, 0.2), /* Sombra leve para dar profundidade */
+        0 0 10px rgba(0, 0, 0, 0.1); /* Um brilho suave ao redor do texto */
+    font-size: 2.5em; /* Tamanho do texto */
+    font-family: 'Arial', sans-serif; /* Fonte moderna */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil em branco transparente */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+.container-introducao {
+    display: flex; /* Utiliza o flexbox para distribuir os itens */
+    justify-content: space-between; /* Espaço entre o título e o conteúdo */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    padding: 30px 40px; /* Padding geral da seção */
+    margin-top: 88px;
+    background: white; /* Fundo branco */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding-top: 70px;
+    padding-bottom: 68px;
+    margin-bottom: 88px;
+}
+
+.titulo-introducao {
+    font-size: 2em; /* Tamanho maior para o título */
+    color: #333; /* Cor do título */
+    width: 30%; /* Lado esquerdo ocupa 30% da largura */
+    text-align: center; /* Alinha o título à esquerda */
 }
 
 .textointroducao {
-    font-size: 18px; /* Tamanho de fonte maior para uma leitura mais fácil */
-    color: #fff; /* Texto branco para contraste com o fundo */
-    background: linear-gradient(135deg, #498ccf, #0165a7); /* Gradiente suave de azul claro para escuro */
-    padding: 15px 30px; /* Mais espaçamento ao redor do texto */
-    margin-top: 15px;
-    border-radius: 10px; /* Bordas arredondadas para suavizar a aparência */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
-    text-align: center; /* Alinha o texto no centro */
-    transition: all 0.5s ease; /* Transição suave para efeitos */
+    font-size: 18px; /* Tamanho de fonte maior para facilitar a leitura */
+    color: #333; /* Texto escuro para contraste */
+    background: #ffffff; /* Fundo branco */
+    padding: 30px; /* Padding interno */
+    width: 65%; /* O texto ocupa 65% da largura */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.03); /* Sombra suave */
+    text-align: center; /* Alinha o texto à esquerda */
+    margin-left: 20px; /* Distância entre o título e o texto */
 }
 
-/* Efeito de hover para tornar o texto mais interativo */
 .textointroducao:hover {
-    transform: scale(0.99); /* Aumenta ligeiramente o tamanho quando o usuário passa o mouse */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para chamar mais atenção */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07); /* Sombra mais forte no hover */
 }
 
 /* Ajustes de fontes para diferentes dispositivos */

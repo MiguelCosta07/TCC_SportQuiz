@@ -15,7 +15,7 @@ if (isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])) {
 
         $nome = $mysqli->real_escape_string($_POST['nome']);
         $email = $mysqli->real_escape_string($_POST['email']);
-        $senha = $mysqli->real_escape_string($_POST['senha']);
+        $senha = $_POST['senha'];
 
         // Verificando se o nome ou o email já estão em uso
         $sql_code = "SELECT * FROM usuarios WHERE email = '$email' OR nome = '$nome'";
@@ -24,8 +24,11 @@ if (isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])) {
         if ($sql_query->num_rows > 0) {
             $erro = "Nome ou e-mail já estão em uso. Tente outro.";
         } else {
+            // Criptografando a senha antes de salvar no banco
+            $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
             // Inserindo o usuário na tabela de usuarios
-            $sql_code = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+            $sql_code = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha_hash')";
             $sql_query = $mysqli->query($sql_code);
 
             if ($sql_query) {
