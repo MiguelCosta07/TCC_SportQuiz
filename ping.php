@@ -22,19 +22,18 @@ include 'conexao_bd.php';
     </div>
 
     <div class="quiz-introducao">
-        <h2>Como funciona o quiz?</h2>
-        <p>Bem-vindo ao quiz de futebol do SportQuiz! Aqui, você irá testar seus conhecimentos sobre o futebol com perguntas de diferentes níveis de dificuldade. A cada pergunta, você terá quatro alternativas para escolher, sendo uma delas a resposta correta.</p>
-
+    <h2>Como funciona o quiz?</h2>
+        <p>Bem-vindo ao quiz do SportQuiz! Aqui, você irá testar seus conhecimentos sobre vários esportes, como <strong>futebol</strong>, <strong>basquete</strong>, <strong>tênis de mesa</strong>, <strong>tênis</strong> e <strong>surfe</strong>, com perguntas de diferentes níveis de dificuldade. A cada pergunta, você terá quatro alternativas para escolher, sendo uma delas a resposta correta.</p>
         <p>O objetivo é acertar o maior número de perguntas possíveis e somar pontos para conquistar uma boa posição no nosso ranking. A dificuldade das perguntas pode ser ajustada, e quanto maior a dificuldade, mais pontos você ganhará por acertar a questão!</p>
 
-        <h3>Etapas do Quiz:</h3>
-        <ol>
-            <li><strong>Escolha a dificuldade:</strong> Fácil, Médio ou Difícil.</li>
-            <li><strong>Responda as perguntas:</strong> A cada questão, escolha uma das alternativas.</li>
-            <li><strong>Veja sua pontuação:</strong> Depois de responder, você verá sua pontuação e poderá tentar novamente para melhorar.</li>
-        </ol>
+    <h3>Etapas do Quiz:</h3>
+    <ol>
+        <li><strong>Escolha a dificuldade:</strong> Fácil, Médio ou Difícil.</li>
+        <li><strong>Responda as perguntas:</strong> A cada questão, escolha uma das alternativas.</li>
+        <li><strong>Veja sua pontuação:</strong> Depois de responder, você verá sua pontuação e poderá tentar novamente para melhorar.</li>
+    </ol>
 
-        <p>Vamos começar! Escolha a dificuldade abaixo para iniciar seu desafio.</p>
+        <p>Vamos começar! Escolha o esporte e a dificuldade abaixo para iniciar seu desafio.</p>
     </div>
 
     <div class="form-container">

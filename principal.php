@@ -63,14 +63,21 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-item active">
-                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2021/04/Manchete-8-843x474.jpg" alt="Banner 1">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2021/06/unnamed-843x474.jpg" alt="Banner 1">
             </div>
             <div class="carousel-item">
-                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2021/04/Manchete-1-843x474.jpg" alt="Banner 2">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2022/06/Stephanie-Gilmore_Easy-Resize.com_-843x474.jpg" alt="Banner 2">
             </div>
             <div class="carousel-item">
-                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2021/04/Manchete-5-843x474.jpg" alt="Banner 3">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2024/04/53620461964_8c44711e53_o_af649bc2-8fcd-47db-ab23-c37c0247dc10-843x474.jpg" alt="Banner 3">
             </div>
+            <div class="carousel-item">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2021/07/tenis-feminino-843x474.jpeg" alt="Banner 4">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2024/08/foto-Denis-LOVROVIC-AFP-843x474.jpg" alt="Banner 4">
+            </div>
+            <p class="rodapecarousel">Esportes Incluidos no SportQuiz</p>
         </div>
     </div>
 
