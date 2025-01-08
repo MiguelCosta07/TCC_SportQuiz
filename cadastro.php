@@ -61,7 +61,7 @@ if (isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])) {
 
             <h1>Cadastro</h1>
             <label for="nome">Nome</label>
-            <input class="escrever" type="text" name="nome" required minlength="5">
+            <input class="escrever" type="text" name="nome" required minlength="3">
             <label for="email">E-mail</label>
             <input class="escrever" type="email" name="email" required>
             <label for="senha">Senha</label>
