@@ -115,9 +115,32 @@ $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
 $usuario = $result->fetch_assoc();
-?>
 
-<!-- O HTML permanece o mesmo, você já tem a estrutura para exibir a mensagem de erro -->
+if (isset($_POST['excluir_conta'])) {
+    $senha_confirmacao = isset($_POST['senha_confirmacao']) ? trim($_POST['senha_confirmacao']) : null;
+    $confirmar_senha = isset($_POST['confirmar_senha']) ? trim($_POST['confirmar_senha']) : null;
+
+    if ($senha_confirmacao === $confirmar_senha) {
+        // Verifica se a senha está correta
+        if ($senha_confirmacao && password_verify($senha_confirmacao, $usuario['senha'])) {
+            // Exclui a conta do usuário
+            $sql_delete = "DELETE FROM usuarios WHERE id = ?";
+            $stmt_delete = $mysqli->prepare($sql_delete);
+            $stmt_delete->bind_param("i", $id);
+            $stmt_delete->execute();
+
+            // Destroi a sessão e redireciona para o index
+            session_destroy();
+            header("Location: index.php");
+            exit;
+        } else {
+            $message = "Senha incorreta. A conta não foi excluída.";
+        }
+    } else {
+        $message = "As senhas não coincidem. A conta não foi excluída.";
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -161,9 +184,38 @@ $usuario = $result->fetch_assoc();
             <button type="submit" class="pag-perfil-btn">Atualizar</button>
         </form>
         <br>
-
         <a href="principal.php"><button class="pag-perfil-btn">Voltar</button></a>
     </div>
+
+            <!-- Botão de abrir modal -->
+    <div class="delete-account-container">
+        <button type="button" class="delete-account-btn" onclick="openModal()">Excluir Conta</button>
+    </div>
+
+    <!-- Modal de confirmação -->
+    <div id="deleteAccountModal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">Excluir Conta</h2>
+            <p class="modal-message">Deseja realmente excluir sua conta?</p>
+            <form method="POST" class="modal-form">
+                <!-- Campo para senha -->
+                <div class="modal-input-group">
+                    <label for="senha_confirmacao" class="modal-label">Digite sua senha:</label>
+                    <input type="password" name="senha_confirmacao" id="senha_confirmacao" class="modal-input" required minlength="3">
+                </div>
+
+                <!-- Campo para confirmar senha -->
+                <div class="modal-input-group">
+                    <label for="confirmar_senha" class="modal-label">Confirme sua senha</label>
+                    <input type="password" name="confirmar_senha" id="confirmar_senha" class="modal-input" required minlength="3">
+                </div>
+
+                <button type="submit" name="excluir_conta" class="modal-confirm-btn">Excluir Conta</button>
+                <button type="button" class="modal-cancel-btn" onclick="closeModal()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
     <div class="tableinfuser">
         <h2 class="tableinfuser-title">Informações do Meu Perfil</h2>
         <table class="tableinfuser-table">
@@ -185,5 +237,25 @@ $usuario = $result->fetch_assoc();
             </tr>
         </table>
     </div>
+
+    <script>
+        // Função para abrir o modal
+        function openModal() {
+            document.getElementById('deleteAccountModal').style.display = 'block';
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById('deleteAccountModal').style.display = 'none';
+        }
+
+        // Fechar modal ao clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('deleteAccountModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
