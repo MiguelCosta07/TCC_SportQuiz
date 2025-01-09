@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/01/2025 às 22:14
+-- Tempo de geração: 10/01/2025 às 00:40
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -569,14 +569,15 @@ CREATE TABLE `ranking` (
 
 INSERT INTO `ranking` (`id`, `id_usuario`, `pontuacao`) VALUES
 (9, 9, 0),
-(10, 10, 29),
-(11, 11, 12),
+(10, 10, 32),
 (12, 12, 0),
 (13, 13, 1),
 (14, 14, 1),
 (15, 15, 3),
 (16, 16, 3),
-(17, 17, 2);
+(17, 17, 2),
+(19, 21, 2),
+(20, 26, 19);
 
 -- --------------------------------------------------------
 
@@ -597,15 +598,17 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `senha`, `email`, `imagem_perfil`) VALUES
-(9, 'miguel', '$2y$10$AnII1Nqeh96ox.2CM7ZX6u5DVc6IGRwjDBt6QzGGSgFJyfJn4S0s2', 'miguel@gmail.com', 'imagem/uploads/677c021a88219_perfilmiguel.jpg'),
+(9, 'MIGSTR', '$2y$10$HXDmtwOUUAUV6w847ROkJ.Yl.umouANMApctCbuYPYaX4mIVTKdrq', 'miguel@gmail.com', 'imagem/uploads/677c021a88219_perfilmiguel.jpg'),
 (10, 'Diogo', '$2y$10$TVvqYjYyu/e5/n4gCwDxcOJoa8OtPyhbAeFPHHvTvCA3o/iHsRlRa', 'diogo@gmail.com', 'imagem/uploads/677ed4c217835_perfildiogo.jpg'),
-(11, 'Ruan', '$2y$10$WWUC0u/ubO2zV9IiXXxIQuKFLeA3Tp77elpVNzE96IxYGg4QObjRK', 'ruan@gmail.com', 'imagem/uploads/677ed733f2695_Captura de tela 2025-01-02 142056.png'),
 (12, 'João Policarpo', '$2y$10$17J9dLfik2fpiXYn9nJ25.BkcqaEUGlJgGJsxfzC7e3xJ4HlDMExK', 'joao@gmail.com', NULL),
 (13, 'Guilherme', '$2y$10$/B5k48eRD5zVCDbRci.0uuHfVez40K9kNH1sNNEetbfgtj8EPEcNe', 'gui@gmail.com', NULL),
 (14, 'Zeusx', '$2y$10$SdauUlZWHxCv2qLDFT.Ope0gJZXu7NIEV5dTw5bSMjMBE6GnrIlqm', 'nicolas@gmail.com', NULL),
 (15, 'João Louko', '$2y$10$RK0awniOX5SFHOc/1ISs2e4YsebF0imllXU2u83N6ihvPtEy1idb2', 'pires@gmail.com', NULL),
 (16, 'Yago Model', '$2y$10$/LAGrWV6EWh0.xEdg07O2OntW.uAQCoDAXzhaaT5H9hxLjzQX.5HW', 'yago@gmail.com', NULL),
-(17, 'Mariana', '$2y$10$PGCXHA6wzS0uGJUcMe0WrOQqSjuosFo28iK5xnpaf4Wg3zYkjhOYC', 'mariana@gmail.com', NULL);
+(17, 'Mariana', '$2y$10$PGCXHA6wzS0uGJUcMe0WrOQqSjuosFo28iK5xnpaf4Wg3zYkjhOYC', 'mariana@gmail.com', NULL),
+(19, 'Caio', '$2y$10$hEchq4FacdISO2aaWL16XuK.wHy4d9U/xhi/vAAkWgerV12G5wg.a', 'caio@gmail.com', 'imagem/uploads/6780198ee9bff_Captura de tela 2025-01-04 222338.png'),
+(21, 'Joédio', '$2y$10$C5d6YHmhm/GBAOYxpReK2e8zjEBbYiNdJDyaBZ1.wjkjsQAzPXN/K', 'jojo@gmail.com', 'imagem/uploads/6780275137e45_Captura de tela 2025-01-04 222338.png'),
+(26, 'excluir', '$2y$10$IbHeadGcicMj8NNwR8f3juuuTmQOrFx.QLOfbHi9JdwH7ujsF0vSW', 'exc@gmail.com', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -681,13 +684,13 @@ ALTER TABLE `perguntas`
 -- AUTO_INCREMENT de tabela `ranking`
 --
 ALTER TABLE `ranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Restrições para tabelas despejadas
