@@ -22,52 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $alterou_nome = false;
     $alterou_senha = false;
 
-    // Verifica se o nome de usuário já está em uso
-    if ($nome) {
-        $sql_check_nome = "SELECT id FROM usuarios WHERE nome = ? AND id != ?";
-        $stmt_check = $mysqli->prepare($sql_check_nome);
-        $stmt_check->bind_param("si", $nome, $id);
-        $stmt_check->execute();
-        $check_result = $stmt_check->get_result();
-
-        if ($check_result->num_rows > 0) {
-            $message = "Esse nome de usuário já está em uso. Por favor, escolha outro.";
-        } else {
-            // Verifica se o nome foi alterado
-            if ($nome !== $usuario['nome']) {
-                $sql_update_nome = "UPDATE usuarios SET nome = ? WHERE id = ?";
-                $stmt_nome = $mysqli->prepare($sql_update_nome);
-                $stmt_nome->bind_param("si", $nome, $id);
-                $stmt_nome->execute();
-                $alterou_nome = true;
-            }
-        }
-    }
-
-    // Verifica se a imagem foi enviada
-    if (isset($_FILES['fotoPerfil']) && $_FILES['fotoPerfil']['error'] == 0) {
-        $foto = $_FILES['fotoPerfil'];
-        $diretorio = 'imagem/uploads/';
-        $nome_imagem = uniqid() . '_' . basename($foto['name']);
-        $caminho_imagem = $diretorio . $nome_imagem;
-
-        if (move_uploaded_file($foto['tmp_name'], $caminho_imagem)) {
-            // Verifica se a imagem é igual à antiga
-            if ($caminho_imagem !== $usuario['imagem_perfil']) {
-                $sql_update_imagem = "UPDATE usuarios SET imagem_perfil = ? WHERE id = ?";
-                $stmt_imagem = $mysqli->prepare($sql_update_imagem);
-                $stmt_imagem->bind_param("si", $caminho_imagem, $id);
-                $stmt_imagem->execute();
-                $alterou_imagem = true;
-            } else {
-                $message = "Você não pode mudar sua imagem utilizando a mesma antiga.";
-            }
-        } else {
-            $message = "Erro ao carregar a imagem!";
-        }
-    }
-
-    // Verifica se a senha atual está correta antes de permitir alteração
+    // Verifica se a senha atual está correta
     if ($senha_atual && password_verify($senha_atual, $usuario['senha'])) {
         // Se a senha nova foi fornecida
         if ($senha_nova) {
@@ -83,25 +38,70 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $alterou_senha = true;
             }
         }
-    } elseif ($senha_atual) {
-        $message = "A senha atual está incorreta!";
-    }
 
-    // Exibe a mensagem de acordo com as alterações feitas
-    if ($alterou_imagem && $alterou_nome && $alterou_senha) {
-        $message = "Você alterou sua foto de perfil, nome e senha com sucesso!";
-    } elseif ($alterou_imagem && $alterou_nome) {
-        $message = "Você alterou sua foto de perfil e nome com sucesso!";
-    } elseif ($alterou_imagem && $alterou_senha) {
-        $message = "Você alterou sua foto de perfil e senha com sucesso!";
-    } elseif ($alterou_nome && $alterou_senha) {
-        $message = "Você alterou seu nome e senha com sucesso!";
-    } elseif ($alterou_imagem) {
-        $message = "Você alterou sua foto de perfil com sucesso!";
-    } elseif ($alterou_nome) {
-        $message = "Você alterou seu nome com sucesso!";
-    } elseif ($alterou_senha) {
-        $message = "Você alterou sua senha com sucesso!";
+        // Atualiza o nome do usuário se necessário
+        if ($nome) {
+            $sql_check_nome = "SELECT id FROM usuarios WHERE nome = ? AND id != ?";
+            $stmt_check = $mysqli->prepare($sql_check_nome);
+            $stmt_check->bind_param("si", $nome, $id);
+            $stmt_check->execute();
+            $check_result = $stmt_check->get_result();
+
+            if ($check_result->num_rows > 0) {
+                $message = "Esse nome de usuário já está em uso. Por favor, escolha outro.";
+            } else {
+                if ($nome !== $usuario['nome']) {
+                    $sql_update_nome = "UPDATE usuarios SET nome = ? WHERE id = ?";
+                    $stmt_nome = $mysqli->prepare($sql_update_nome);
+                    $stmt_nome->bind_param("si", $nome, $id);
+                    $stmt_nome->execute();
+                    $alterou_nome = true;
+                }
+            }
+        }
+
+        // Atualiza a foto de perfil se necessário
+        if (isset($_FILES['fotoPerfil']) && $_FILES['fotoPerfil']['error'] == 0) {
+            $foto = $_FILES['fotoPerfil'];
+            $diretorio = 'imagem/uploads/';
+            $nome_imagem = uniqid() . '_' . basename($foto['name']);
+            $caminho_imagem = $diretorio . $nome_imagem;
+
+            if (move_uploaded_file($foto['tmp_name'], $caminho_imagem)) {
+                // Verifica se a imagem é igual à antiga
+                if ($caminho_imagem !== $usuario['imagem_perfil']) {
+                    $sql_update_imagem = "UPDATE usuarios SET imagem_perfil = ? WHERE id = ?";
+                    $stmt_imagem = $mysqli->prepare($sql_update_imagem);
+                    $stmt_imagem->bind_param("si", $caminho_imagem, $id);
+                    $stmt_imagem->execute();
+                    $alterou_imagem = true;
+                } else {
+                    $message = "Você não pode mudar sua imagem utilizando a mesma antiga.";
+                }
+            } else {
+                $message = "Erro ao carregar a imagem!";
+            }
+        }
+
+        // Exibe a mensagem de acordo com as alterações feitas
+        if ($alterou_imagem && $alterou_nome && $alterou_senha) {
+            $message = "Você alterou sua foto de perfil, nome e senha com sucesso!";
+        } elseif ($alterou_imagem && $alterou_nome) {
+            $message = "Você alterou sua foto de perfil e nome com sucesso!";
+        } elseif ($alterou_imagem && $alterou_senha) {
+            $message = "Você alterou sua foto de perfil e senha com sucesso!";
+        } elseif ($alterou_nome && $alterou_senha) {
+            $message = "Você alterou seu nome e senha com sucesso!";
+        } elseif ($alterou_imagem) {
+            $message = "Você alterou sua foto de perfil com sucesso!";
+        } elseif ($alterou_nome) {
+            $message = "Você alterou seu nome com sucesso!";
+        } elseif ($alterou_senha) {
+            $message = "Você alterou sua senha com sucesso!";
+        }
+    } else {
+        // Se a senha atual estiver incorreta, exibe a mensagem de erro
+        $message = "A senha atual está incorreta, nenhuma credencial atualizada !";
     }
 }
 
@@ -117,6 +117,7 @@ $result = $stmt->get_result();
 $usuario = $result->fetch_assoc();
 ?>
 
+<!-- O HTML permanece o mesmo, você já tem a estrutura para exibir a mensagem de erro -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
