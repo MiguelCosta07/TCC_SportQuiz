@@ -170,11 +170,11 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
 
     <footer>
         <div class="footer-content">
-            <div class="footer-section about">
+            <div class="footer-section-esquerdo">
                 <h3>Sobre Nós</h3>
                 <p>Somos uma empresa dedicada a criar experiências únicas e emocionantes para os amantes de esportes ao redor do mundo. Estimulando seu conhecimento e aprendizagem!</p>
             </div>
-            <div class="footer-section social">
+            <div class="footer-section-direito">
                 <h3>Siga-nos</h3>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
