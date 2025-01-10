@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10/01/2025 às 00:40
+-- Tempo de geração: 10/01/2025 às 20:11
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -576,8 +576,7 @@ INSERT INTO `ranking` (`id`, `id_usuario`, `pontuacao`) VALUES
 (15, 15, 3),
 (16, 16, 3),
 (17, 17, 2),
-(19, 21, 2),
-(20, 26, 19);
+(19, 21, 2);
 
 -- --------------------------------------------------------
 
@@ -607,8 +606,7 @@ INSERT INTO `usuarios` (`id`, `nome`, `senha`, `email`, `imagem_perfil`) VALUES
 (16, 'Yago Model', '$2y$10$/LAGrWV6EWh0.xEdg07O2OntW.uAQCoDAXzhaaT5H9hxLjzQX.5HW', 'yago@gmail.com', NULL),
 (17, 'Mariana', '$2y$10$PGCXHA6wzS0uGJUcMe0WrOQqSjuosFo28iK5xnpaf4Wg3zYkjhOYC', 'mariana@gmail.com', NULL),
 (19, 'Caio', '$2y$10$hEchq4FacdISO2aaWL16XuK.wHy4d9U/xhi/vAAkWgerV12G5wg.a', 'caio@gmail.com', 'imagem/uploads/6780198ee9bff_Captura de tela 2025-01-04 222338.png'),
-(21, 'Joédio', '$2y$10$C5d6YHmhm/GBAOYxpReK2e8zjEBbYiNdJDyaBZ1.wjkjsQAzPXN/K', 'jojo@gmail.com', 'imagem/uploads/6780275137e45_Captura de tela 2025-01-04 222338.png'),
-(26, 'excluir', '$2y$10$IbHeadGcicMj8NNwR8f3juuuTmQOrFx.QLOfbHi9JdwH7ujsF0vSW', 'exc@gmail.com', NULL);
+(21, 'Joédio', '$2y$10$C5d6YHmhm/GBAOYxpReK2e8zjEBbYiNdJDyaBZ1.wjkjsQAzPXN/K', 'jojo@gmail.com', 'imagem/uploads/6780275137e45_Captura de tela 2025-01-04 222338.png');
 
 --
 -- Índices para tabelas despejadas
@@ -684,13 +682,13 @@ ALTER TABLE `perguntas`
 -- AUTO_INCREMENT de tabela `ranking`
 --
 ALTER TABLE `ranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Restrições para tabelas despejadas
