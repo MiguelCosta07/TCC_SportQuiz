@@ -123,6 +123,12 @@ if (isset($_POST['excluir_conta'])) {
     if ($senha_confirmacao === $confirmar_senha) {
         // Verifica se a senha está correta
         if ($senha_confirmacao && password_verify($senha_confirmacao, $usuario['senha'])) {
+            // Exclui primeiro o registro do usuário no ranking
+            $sql_delete_ranking = "DELETE FROM ranking WHERE id_usuario = ?";
+            $stmt_ranking = $mysqli->prepare($sql_delete_ranking);
+            $stmt_ranking->bind_param("i", $id);
+            $stmt_ranking->execute();
+
             // Exclui a conta do usuário
             $sql_delete = "DELETE FROM usuarios WHERE id = ?";
             $stmt_delete = $mysqli->prepare($sql_delete);

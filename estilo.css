@@ -1580,20 +1580,20 @@ footer {
 }
 
 .modal-input-group {
-    display: flex;
-    flex-direction: column; /* Posiciona o label acima do input */
-    margin-bottom: 1rem;    /* Espaçamento entre os grupos */
+    margin-bottom: 15px;
+    text-align: left;
+    align-items: center;
 }
 
 .modal-label {
+    display: block;
     font-size: 14px;
-    color: #333;
-    margin-bottom: 0.5rem;  /* Espaçamento entre o label e o input */
 }
 
 .modal-input {
-    padding: 0.5rem;
-    font-size: 1rem;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
