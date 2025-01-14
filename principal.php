@@ -77,7 +77,7 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
             <div class="carousel-item">
                 <img src="https://www.lance.com.br/galerias/wp-content/uploads/2024/08/foto-Denis-LOVROVIC-AFP-843x474.jpg" alt="Banner 4">
             </div>
-            <p class="rodapecarousel">Esportes Incluidos no SportQuiz</p>
+            <p class="rodapecarousel"><a href="#final">Esportes Incluidos no SportQuiz</a></p>
         </div>
     </div>
 
@@ -92,7 +92,7 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
     </div>
 </div>
 
-
+    <div id="final">
     <div class="content">
         <div class="left-content">
             <h2 class="escolha">Selecione o Esporte</h2>
@@ -164,7 +164,7 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
           <a href="ranking.php" class="btn-ranking">Ver Ranking Completo</a>
         </div>
     </div>
-
+    </div>
 
     </div>
 
