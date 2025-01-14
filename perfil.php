@@ -193,31 +193,29 @@ if (isset($_POST['excluir_conta'])) {
         <a href="principal.php"><button class="pag-perfil-btn">Voltar</button></a>
     </div>
 
-            <!-- Botão de abrir modal -->
+        <!-- Botão de abrir modal -->
     <div class="delete-account-container">
         <button type="button" class="delete-account-btn" onclick="openModal()">Excluir Conta</button>
     </div>
 
-    <!-- Modal de confirmação -->
+        <!-- Modal de confirmação -->
     <div id="deleteAccountModal" class="modal">
         <div class="modal-content">
             <h2 class="modal-title">Excluir Conta</h2>
-            <p class="modal-message">Deseja realmente excluir sua conta?</p>
+            <p class="modal-message">Tem certeza de que deseja excluir sua conta?</p>
             <form method="POST" class="modal-form">
-                <!-- Campo para senha -->
                 <div class="modal-input-group">
                     <label for="senha_confirmacao" class="modal-label">Digite sua senha:</label>
-                    <input type="password" name="senha_confirmacao" id="senha_confirmacao" class="modal-input" required minlength="3">
+                    <input type="password" id="senha_confirmacao" name="senha_confirmacao" class="modal-input" required minlength="3">
                 </div>
-
-                <!-- Campo para confirmar senha -->
                 <div class="modal-input-group">
-                    <label for="confirmar_senha" class="modal-label">Confirme sua senha</label>
-                    <input type="password" name="confirmar_senha" id="confirmar_senha" class="modal-input" required minlength="3">
+                    <label for="confirmar_senha" class="modal-label">Confirme sua senha:</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" class="modal-input" required minlength="3">
                 </div>
-
-                <button type="submit" name="excluir_conta" class="modal-confirm-btn">Excluir Conta</button>
-                <button type="button" class="modal-cancel-btn" onclick="closeModal()">Cancelar</button>
+                <div class="modal-buttons">
+                    <button type="submit" name="excluir_conta" class="modal-confirm-btn">Excluir Conta</button>
+                    <button type="button" class="modal-cancel-btn" onclick="closeModal()">Cancelar</button>
+                </div>
             </form>
         </div>
     </div>
@@ -245,23 +243,23 @@ if (isset($_POST['excluir_conta'])) {
     </div>
 
     <script>
-        // Função para abrir o modal
-        function openModal() {
-            document.getElementById('deleteAccountModal').style.display = 'block';
-        }
+    // Função para abrir o modal
+    function openModal() {
+        document.getElementById('deleteAccountModal').style.display = 'flex';
+    }
 
-        // Função para fechar o modal
-        function closeModal() {
-            document.getElementById('deleteAccountModal').style.display = 'none';
-        }
+    // Função para fechar o modal
+    function closeModal() {
+        document.getElementById('deleteAccountModal').style.display = 'none';
+    }
 
-        // Fechar modal ao clicar fora dele
-        window.onclick = function(event) {
-            const modal = document.getElementById('deleteAccountModal');
-            if (event.target === modal) {
-                closeModal();
-            }
+    // Fechar modal ao clicar fora dele
+    window.addEventListener('click', function (event) {
+        const modal = document.getElementById('deleteAccountModal');
+        if (event.target === modal) {
+            closeModal();
         }
+    });
     </script>
 </body>
 </html>
