@@ -23,6 +23,13 @@
     margin-left: 50px;
     margin-right: 50px;
     padding: 5px;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 black, /* Sombra no canto superior esquerdo */
+        1px -1px 0 black,  /* Sombra no canto superior direito */
+        -1px 1px 0 black,  /* Sombra no canto inferior esquerdo */
+        1px 1px 0 black,   /* Sombra no canto inferior direito */
+        0px 0px 4px black; /* Sombra difusa para aumentar a espessura */
 }
 
 .navbar {
@@ -122,6 +129,13 @@ transition: all 1s;
     font-weight: 600;
     margin-top: 6px;
     text-align: center;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 black, /* Sombra no canto superior esquerdo */
+        1px -1px 0 black,  /* Sombra no canto superior direito */
+        -1px 1px 0 black,  /* Sombra no canto inferior esquerdo */
+        1px 1px 0 black,   /* Sombra no canto inferior direito */
+        0px 0px 4px black; /* Sombra difusa para aumentar a espessura */
 }
 
 .opcao {
@@ -1070,17 +1084,23 @@ footer {
     text-align: center;
     color: #eff1f1;
     background-color: #004755;
-    border: 1px solid gray; /* Corrigido para uma borda uniforme */
+    border: 1px solid rgb(137, 196, 176); /* Corrigido para uma borda uniforme */
     border-radius: 15px; /* Arredondamento das bordas */
     cursor: pointer; /* Adiciona o cursor de mão ao passar sobre o botão */
     transition: all 0.3s ease-in-out; /* Transição mais rápida e fluida */
-    margin-top: 10px;
+    margin-top: 11px;
 }
 
 .rodapecarousel:hover {
-    background-color: #9cb8bc;
-    color: black;
-    transform: translateY(-2px); /* Efeito de elevação */
+    background-color: #14c457e4;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 black, /* Sombra no canto superior esquerdo */
+        1px -1px 0 black,  /* Sombra no canto superior direito */
+        -1px 1px 0 black,  /* Sombra no canto inferior esquerdo */
+        1px 1px 0 black,   /* Sombra no canto inferior direito */
+        0px 0px 3px black; /* Sombra difusa para aumentar a espessura */
+    transform: translateY(-1px); /* Efeito de elevação */
 }
 
 .tituloprincipal {
