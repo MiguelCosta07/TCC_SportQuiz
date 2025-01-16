@@ -59,39 +59,7 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
 </head>
 <body class="bodyprincipal">
     <h1 class="tituloprincipal"> Seja Muito Bem Vindo ao SportQuiz!</h1>
-    <!-- Carousel -->
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-item active">
-                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2021/06/unnamed-843x474.jpg" alt="Banner 1">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2022/06/Stephanie-Gilmore_Easy-Resize.com_-843x474.jpg" alt="Banner 2">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2024/04/53620461964_8c44711e53_o_af649bc2-8fcd-47db-ab23-c37c0247dc10-843x474.jpg" alt="Banner 3">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2021/07/tenis-feminino-843x474.jpeg" alt="Banner 4">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2024/08/foto-Denis-LOVROVIC-AFP-843x474.jpg" alt="Banner 4">
-            </div>
-            <p class="rodapecarousel"><a href="#final">Esportes Incluidos no SportQuiz</a></p>
-        </div>
-    </div>
-
-    <div class="container-introducao">
-    <div class="titulo-introducao">
-        <h2>O que é o SportQuiz?</h2>
-    </div>
-    <div class="textointroducao">
-        <p>
-            O SportQuiz é uma plataforma interativa onde os usuários podem testar seus conhecimentos sobre esportes através de quizzes divertidos. Se você ama futebol, basquete, vôlei ou qualquer outro esporte, este é o lugar perfeito para você aprender e se divertir!
-        </p>
-    </div>
-</div>
-
+    
     <div id="final">
     <div class="content">
         <div class="left-content">
@@ -166,6 +134,43 @@ $ranking = $result_ranking->fetch_all(MYSQLI_ASSOC);
     </div>
     </div>
 
+    </div>
+
+    <div class="container-introducao">
+    <div class="titulo-introducao">
+        <h2>O que é o SportQuiz?</h2>
+    </div>
+    <div class="textointroducao">
+        <p>
+            O SportQuiz é uma plataforma interativa onde os usuários podem testar seus conhecimentos sobre esportes através de quizzes divertidos. Se você ama futebol, basquete, vôlei ou qualquer outro esporte, este é o lugar perfeito para você aprender e se divertir!
+        </p>
+    </div>
+</div>
+
+    <!-- Carousel -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item active">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2021/06/unnamed-843x474.jpg" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2022/06/Stephanie-Gilmore_Easy-Resize.com_-843x474.jpg" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2024/04/53620461964_8c44711e53_o_af649bc2-8fcd-47db-ab23-c37c0247dc10-843x474.jpg" alt="Banner 3">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2021/07/tenis-feminino-843x474.jpeg" alt="Banner 4">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.lance.com.br/galerias/wp-content/uploads/2024/08/foto-Denis-LOVROVIC-AFP-843x474.jpg" alt="Banner 4">
+            </div>
+                <div class="rodapecarousel-container">
+                    <a href="#final">
+                        <button class="rodapecarousel">Esportes Incluidos no SportQuiz</button>
+                    </a>
+                </div>
+        </div>
     </div>
 
     <footer>

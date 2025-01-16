@@ -44,7 +44,7 @@
     font-weight: 400;
     text-shadow: 2px 2px 2px rgb(10, 99, 181);
     color: black;
-    font-size: 32px;
+    font-size: 38px;
     padding: 6px;
     margin-right: 0;  
     transition: all 0.3s ease;
@@ -514,7 +514,7 @@ footer {
 
 .perfil {
     position: relative;
-    margin-left: auto; 
+    margin-left: 590px; 
 }    
 .perfil-btn {
     background: none;
@@ -523,8 +523,8 @@ footer {
 }
 
 .perfil-icone {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
     transition: transform 0.3s ease;
@@ -1033,7 +1033,8 @@ footer {
     margin: 0 auto;
     overflow: hidden; /* Esconde as imagens fora da área visível */
     margin-top: 10px;
-    margin-left: 335px;
+    text-align: center;
+    margin-bottom: 100px;
 }
 
 .carousel {
@@ -1056,10 +1057,30 @@ footer {
     display: none; /* Removendo a exibição dos botões */
 }
 
+.rodapecarousel-container {
+    text-align: center;
+}
+
 .rodapecarousel {
+    display: inline-block; /* Para ajustar o tamanho ao conteúdo, como um botão */
+    padding: 10px 20px; /* Espaçamento interno para parecer um botão */
+    font-size: 16px; /* Tamanho da fonte para melhorar a legibilidade */
+    font-weight: bold; /* Para destacar o texto */
     align-items: center;
     text-align: center;
     color: #eff1f1;
+    background-color: #004755;
+    border: 1px solid gray; /* Corrigido para uma borda uniforme */
+    border-radius: 15px; /* Arredondamento das bordas */
+    cursor: pointer; /* Adiciona o cursor de mão ao passar sobre o botão */
+    transition: all 0.3s ease-in-out; /* Transição mais rápida e fluida */
+    margin-top: 10px;
+}
+
+.rodapecarousel:hover {
+    background-color: #9cb8bc;
+    color: black;
+    transform: translateY(-2px); /* Efeito de elevação */
 }
 
 .tituloprincipal {
@@ -1068,7 +1089,7 @@ footer {
     text-shadow: 
         0 1px 2px rgba(0, 0, 0, 0.2), /* Sombra leve para dar profundidade */
         0 0 10px rgba(0, 0, 0, 0.1); /* Um brilho suave ao redor do texto */
-    font-size: 2.5em; /* Tamanho do texto */
+    font-size: 2.3em; /* Tamanho do texto */
     font-family: 'Arial', sans-serif; /* Fonte moderna */
     padding: 10px; /* Espaçamento interno */
 }
@@ -1078,12 +1099,12 @@ footer {
     justify-content: space-between; /* Espaço entre o título e o conteúdo */
     align-items: center; /* Alinha os itens no centro verticalmente */
     padding: 30px 40px; /* Padding geral da seção */
-    margin-top: 88px;
+    margin-top: 44px;
     background: white; /* Fundo branco */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
     padding-top: 70px;
     padding-bottom: 68px;
-    margin-bottom: 88px;
+    margin-bottom: 120px;
 }
 
 .titulo-introducao {
